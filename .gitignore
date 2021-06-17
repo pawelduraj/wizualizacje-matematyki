@@ -9,6 +9,7 @@ instance/
 .venv
 env/
 venv/
+.vscode
 
 # IDE
 .idea/
