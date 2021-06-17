@@ -5,17 +5,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', content='Quiz')
+    return render_template('index.html', content='quiz')
 
 
-@app.route('/zagadnienie')
-def problem():
-    return render_template('index.html', content='Wybrane zagadnienie matematyczne')
-
-
-@app.route('/about')
-def about():
-    return render_template('index.html', content='O nas...')
+@app.route('/<content>')
+def page(content):
+    return render_template('index.html', content=content)
 
 
 if __name__ == '__main__':
