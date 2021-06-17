@@ -1,0 +1,9 @@
+body {
+    background-color: #e8eaf6;
+}
+
+#content {
+    background-color: #ffffff;
+    height: calc(100vh - 64px);
+    padding: 20px 50px 50px 20px;
+}
