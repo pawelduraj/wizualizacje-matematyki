@@ -32,7 +32,7 @@
 </div>
 <ul class="sidenav" id="mobile-demo">
     <li><a href="/">Quiz</a></li>
-    <li><a href="/problem">Zagadnienie</a></li>
+    <li><a href="/problem">Zagadnienia</a></li>
     <li><a href="/about">O nas</a></li>
 </ul>
 
@@ -68,7 +68,11 @@
             <a class="waves-effect waves-light btn indigo" onclick="check('zad1')">Sprawdź!</a>
         </form>
     {% elif content=='problem' %}
-        <p class="flow-text">Wybrane zagadnienie matematyczne</p>
+    <div class="topics">
+        <a href="/quadratics">Równania i nierówności kwadratowe</a>
+        <a href="/logarithms">Logarytmy</a>
+        <a href="/sequences">Ciągi</a>
+    </div>
     {% elif content=='about' %}
         <p class="flow-text">O nas...</p>
     {% else %}
