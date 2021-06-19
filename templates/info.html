@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wizualizacje Matematyki</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Optimize for mobile view -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Stylesheet from static directory -->
+    <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="indigo darken-2">
+            <div class="nav-wrapper container">
+                <a href="" class="brand-logo">MatWiz</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/">Quiz</a></li>
+                    <li><a href="/problem">Zagadnienie</a></li>
+                    <li><a href="/about">O nas</a></li>
+                </ul>
+             </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="/">Quiz</a></li>
+        <li><a href="/problem">Zagadnienia</a></li>
+        <li><a href="/about">O nas</a></li> 
+    </ul>
+    siema tu beda jakies informacje o nas i o projekcie szczerze nie wiem jak duzo/malo mam tu napisac i tu w sumie bedzie sam tekst raczej (ew jakies obrazki) wiec na razie zostawiam to tak:3
+</body>
+</html>
