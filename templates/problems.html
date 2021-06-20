@@ -51,55 +51,29 @@
     <li><a href="/about">O nas</a></li>
 </ul>
 
-<div id="mathjax-content" class="container z-depth-2">
-    <h3 class="center">Logarytmy</h3>
-    <p>Definicja logarytmu - logarytm przy podstawie \(a\) z liczby \(b\) to taka liczba \(c,\) że \(a^c = b.\)
-        Zapis matematyczny: \(\log_{a} b = c \Leftrightarrow a^c = b.\)
-    </p>
-    <p>Założenia:</p>
-    <ol>
-        <li>\(a \gt 0\)</li>
-        <li>\(a \ne 1\)</li>
-        <li>\(b \gt 0\)</li>
-    </ol>
-    <p><b>Przykład 1.</b> \(\log_{2} 16 = 4\), ponieważ \(2^4 = 16\)</p>
-    <p class="center"><strong>Działania i operacje na logarytmach</strong></p><br>
-    <p>Jeżeli \(a \gt 0,\) \(a \ne 1,\) \(b \gt 0,\) \(c \gt 0,\) to zachodzą następujące wzory:</p>
-    <ol>
-        <li>\(\log_{a} b + \log_{a} c = \log_{a} (b \cdot c);\)</li>
-        <li>\(\log_{a} b - \log_{a} c = \log_{a} (\frac{b}{c});\)</li>
-        <li>\(\log_{a} b^n = n \cdot \log_{a} b;\)</li>
-        <li>\(a^{\log_{a} b} = b;\)</li>
-        <li>\(\log_{a} b = \frac{\log_{c} b}{\log_{c} a}.\)</li>
-    </ol>
-    <p><b>Przykład 2.</b> Oblicz \(\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3}.\)<br></p>
-    <div class="scroll">$$\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3} = \frac{\log_{5} 4 + \frac{\log_{5}
-        4}{\log_{5} 25}}{\log_{5} 3} =
-        \frac{\log_{5} 4 + \frac{\log_{5} 4}{2}}{\log_{5} 3} = \frac{\frac{3}{2} \log_{5} 4}{\log_{5} 3} =
-        \frac{\log_{5} 4^{\frac{3}{2}}}{\log_{5} 3} = \frac{\log_{5} 8}{\log_{5} 3} = \log_{3} 8$$
+<div id="content" class="container z-depth-2">
+    <div class="row center">
+        <div class="col s12 m6">
+            <div class="card-panel indigo">
+                <span class="white-text">Strona w budowie :) <br> Za utrudnienia przepraszamy</span>
+            </div>
+        </div>
     </div>
-    <p><b>Przykład 3.</b> Oblicz \(\frac{1}{2} \log_{3} 15 - \log_3 \sqrt{5}.\)<br></p>
-    <div class="scroll">$$\frac{1}{2} \log_{3} 15 - \log_3 \sqrt{5} = \log_{3} \sqrt{15} - \log_3 \sqrt{5} =
-        \log_{3}
-        \sqrt{\frac{15}{5}} =
-        \log_{3} \sqrt{3} = \frac{1}{2}$$
+    <div class="topics">
+        <a href="/quadratics">Równania i nierówności kwadratowe</a>
+        <a href="/logarithms">Logarytmy</a>
+        <a href="/sequences">Ciągi</a>
     </div>
-    <p><b>Przykład 4.</b>Rozwiąż równanie \(log_{\sqrt{2}} (\log_{7} \frac{2^x + 104}{2^{x+1}}) = 0.\)<br>
-        Z definicji logarytmu</p>
-    <div class="scroll">$$\log_{7} \frac{2^x + 104}{2^{x+1}} = \sqrt{2}^0 = 1$$
-        $$\frac{2^x + 104}{2^{x+1}} = 7^1 = 7$$
-        $$2^x + 104 = 7(2 \cdot 2^x)$$
-        $$104 = 13 \cdot 2^x$$
-        $$2^x = 8$$
-        $$x = 2.$$
-    </div>
-    <p>Odpowiedź: \(x = 2.\)</p>
+<<<<<<< HEAD:templates/index.html
+    {% elif content=='about' %}
+        <p class="flow-text">wip czekam na zdjecia kochani</p>
+    {% else %}
+        <p class="flow-text">404 - Strona, której szukasz nie istnieje :(</p>
+    {% endif %}
+=======
+>>>>>>> f626e945aed6431f7a580895fb2182f52797e31e:templates/problems.html
 </div>
-<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
-<!-- Mathjax -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

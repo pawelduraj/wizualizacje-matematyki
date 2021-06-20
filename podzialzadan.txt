@@ -3,3 +3,4 @@ Wiktoria Kudła 262254 - podstrony:
     2) informacje o projekcie i autorzy
     3) wyniki quizu* 
 Jerzy Grunwald 262237 - podstrona zagadnienia
+Krzysztof Mizgała - full stack

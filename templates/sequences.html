@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <title>Wizualizacje Matematyki</title>
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg') }}" color="#3f51b5">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="apple-mobile-web-app-title" content="MatWiz">
+    <meta name="application-name" content="MatWiz">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="{{ url_for('static', filename='browserconfig.xml') }}">
+    <meta name="theme-color" content="#3f51b5">
+
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -12,152 +25,156 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Optimize for mobile view -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Stylesheet from static directory -->
     <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav class="indigo darken-2">
-            <div class="nav-wrapper container">
-                <a href="" class="brand-logo">MatWiz</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/">Quiz</a></li>
-                    <li><a href="/problems">Zagadnienia</a></li>
-                    <li><a href="/about">O nas</a></li>
-                </ul>
-            </div>
-        </nav>
+<div class="navbar-fixed">
+    <nav class="indigo darken-2">
+        <div class="nav-wrapper container">
+            <a href="" class="brand-logo">MatWiz</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Quiz</a></li>
+                <li><a href="/problems">Zagadnienia</a></li>
+                <li><a href="/about">O nas</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/">Quiz</a></li>
+    <li><a href="/problems">Zagadnienia</a></li>
+    <li><a href="/about">O nas</a></li>
+</ul>
+
+<div id="mathjax-content" class="container z-depth-2">
+    <h3 class="center">Ciągi liczbowe</h3>
+    <p>Ciągi to funkcje określone na podzbiorze liczb naturalnych. Mogą być skończone lub nieskończone
+        (przykład ciągu skończonego \(- (1, 2, 3, 4, 5, 2, 5, -3, 81)\), przykład ciągu nieskończonego \(- (2, 4, 6,
+        8, 10, \dots)\)).
+        Zwykle ciągi mają określoną regułę, według której powstają kolejne wyrazy.</p>
+    <p>Rozważmy przykład ciągu \((2, 4, 6, 8, 10, \dots).\)<br>
+        Można zauważyć, że pierwszy wyraz jest równy 2, drugi wyraz to 4, trzeci to 6 i tak dalej. Funkcję taką
+        możemy opisać jako
+        \(f(n) = 2n,\) chociaż w przypadku ciągów zwyczajowo zapisuje się to jako \(a_n = 2n.\) \(a_n\) to wzór
+        ogólny ciągu, czyli reguła
+        określająca wartość \(n-\)tego wyrazu ciągu.</p>
+    <p><b>Przykład 1.</b> Znajdź wzór ogólny ciągu \((\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16},
+        \dots.)\)<br>
+        Zauważamy, że w mianownikach kolejnych wyrazów występują kolejne potęgi dwójki. Pierwszy wyraz to
+        \(\frac{1}{2^1},\)
+        drugi to \(\frac{1}{2^2}\) itd. Stąd możemy odgadnąć wzór ogólny ciągu
+        \(a_n = \frac{1}{2^n}.\)</p>
+    <p>Ciągi, tak samo jak pozostałe funkcje, mogą być rosnące, niemalejące, stałe, nierosnące, malejące lub
+        niemonotoniczne.
+        Aby ustalić który przypadek zachodzi, należy rozważyć różnicę \(a_{n+1} - a_n.\) Jeżeli dla każdego \(n \in
+        \mathbb{N}:\)</p>
+    <ol>
+        <li>\(a_{n+1} - a_n \gt 0\) to oznacza to, że \(a_{n+1} \gt a_n,\) czyli ciąg jest rosnący;</li>
+        <li>\(a_{n+1} - a_n \ge 0\) to oznacza to, że \(a_{n+1} \ge a_n,\) czyli ciąg jest niemalejący;</li>
+        <li>\(a_{n+1} - a_n = 0\) to oznacza to, że \(a_{n+1} = a_n,\) czyli ciąg jest stały;</li>
+        <li>\(a_{n+1} - a_n \le 0\) to oznacza to, że \(a_{n+1} \le a_n,\) czyli ciąg jest nierosnący;</li>
+        <li>\(a_{n+1} - a_n \lt 0\) to oznacza to, że \(a_{n+1} \lt a_n,\) czyli ciąg jest malejący;</li>
+        <li>\(a_{n+1} - a_n\) nie ma stałego znaku, to oznacza to, że ciąg nie jest monotoniczny.</li>
+    </ol>
+    <p><b>Przykład 2.</b> Zbadaj monotoniczność ciągu \(a_n = \frac{n}{3n + 1}.\)<br>
+        Liczymy różnicę \(a_{n+1} - a_n.\)</p>
+    <div class="scroll">$$a_{n+1} - a_n = \frac{n+1}{3(n+1) + 1} - \frac{n}{3n + 1} =
+        \frac{(n + 1)(3n + 1) - n(3n + 4)}{(3n + 4)(3n + 1)} = \frac{3n^2 + 4n + 1 - 3n^2 - 4n}{(3n + 4)(3n + 1)} =
+        \frac{1}{(3n + 4)(3n + 1)}.$$
     </div>
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="/">Quiz</a></li>
-        <li><a href="/problems">Zagadnienia</a></li>
-        <li><a href="/about">O nas</a></li>
+    <p>Dla każdego \(n \in \mathbb{N} \frac{1}{(3n + 4)(3n + 1)} \gt 0,\) więc ciąg \(a_n = \frac{n}{3n + 1}\) jest
+        rosnący.</p>
+    <p><b>Przykład 3.</b> Zbadaj monotoniczność ciągu \(a_n = n^2 - 4n.\)<br>
+        Liczymy różnicę \(a_{n+1} - a_n.\)</p>
+    <div class="scroll">$$a_{n+1} - a_n = (n + 1)^2 - 4(n + 1) - (n^2 - 4n) = n^2 + 2n + 1 - 4n - 4 - n^2 + 4n =
+        2n - 3.$$
+    </div>
+    <p>Gdy \(n = 1,\) to \(2n - 3 = 2 - 3 = -1 \lt 0,\) ale jeżeli \(n \ge 2,\) to \(2n - 3 \ge 4 - 3 = 1 \gt 0.\)
+        Oznacza to,
+        że w zależności od \(n\) wyrażenie \(a_{n+1} - a_n\) zmienia znak, czyli ciąg \(a_n = n^2 - 4n\) nie jest
+        monotoniczny.</p>
+    <p class="center"><b>Ciąg arytmetyczny</b></p>
+    <p>Ciąg arytmetyczny to specjalny rodzaj ciągu liczbowego, w którym każdy wyraz różni się od poprzedniego o
+        stałą liczbę.
+        Liczbę tę nazywa się różnicą ciągu arytmetycznego i oznacza \(r.\)
+        Ciąg arytmetyczny ma postać \((a_1, a_1 + r, a_1 + 2r, a_1 + 3r, a_1 + 4r, \dots).\)</p>
+    <p><b>Przykład 4.</b> Wyznacz wzór ogólny ciągu arytmetycznego o pierwszym wyrazie \(a_1 = 1\) i różnicy \(r =
+        3.\)<br>
+        Skoro \(a_n\) jest ciągiem arytmetycznym, to</p>
+    <div class="scroll">$$a_2 = a_1 + r, \quad a_3 = a_2 + r = a_1 + r + r = a_1 + 2r, \quad a_4 = a_3 + r =
+        a_1 + 2r + r = a_1 + 3r \mathrm{ \quad itd.}$$
+    </div>
+    <p>Możemy tutaj zauważyć zależność \(a_n = a_1 + (n-1)r.\)
+        Pozostaje podstawić nasze wartości aby otrzymać \(a_n = a_1 + (n - 1)r = 1 + 3(n - 1) = 3n - 2.\)</p>
+    <p class="center"><b>Najważniejsze wzory związane z ciągami arytmetycznymi.</b></p>
+    <ul>
+        <li>Wzór na \(n\)-ty wyraz ciągu arytmetycznego
+            <div class="scroll">$$a_n = a_1 + (n-1)r;$$</div>
+        </li>
+        <li>Wzór na sumę pierwszych \(n\) wyrazów ciągu arytmetycznego
+            <div class="scroll">$$S_n = \frac{a_1 + a_n}{2}n;$$</div>
+        </li>
+        <li>Jeżeli \(a, b, c\) są kolejnymi wyrazami ciągu arytmetycznego, to zachodzi wzór
+            <div class="scroll">$$b = \frac{a + c}{2}.$$</div>
+        </li>
     </ul>
-
-    <div id="mathjax-content" class="container z-depth-2">
-        <h1 class="center">Ciągi liczbowe</h1>
-        <p>Ciągi to funkcje określone na podzbiorze liczb naturalnych. Mogą być skończone lub nieskończone
-            (przykład ciągu skończonego \(- (1, 2, 3, 4, 5, 2, 5, -3, 81)\), przykład ciągu nieskończonego \(- (2, 4, 6,
-            8, 10, \dots)\)).
-            Zwykle ciągi mają określoną regułę, według której powstają kolejne wyrazy.</p>
-        <p>Rozważmy przykład ciągu \((2, 4, 6, 8, 10, \dots).\)<br>
-            Można zauważyć, że pierwszy wyraz jest równy 2, drugi wyraz to 4, trzeci to 6 i tak dalej. Funkcję taką
-            możemy opisać jako
-            \(f(n) = 2n,\) chociaż w przypadku ciągów zwyczajowo zapisuje się to jako \(a_n = 2n.\) \(a_n\) to wzór
-            ogólny ciągu, czyli reguła
-            określająca wartość \(n-\)tego wyrazu ciągu.</p>
-        <p><b>Przykład 1.</b> Znajdź wzór ogólny ciągu \((\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16},
-            \dots.)\)<br>
-            Zauważamy, że w mianownikach kolejnych wyrazów występują kolejne potęgi dwójki. Pierwszy wyraz to
-            \(\frac{1}{2^1},\)
-            drugi to \(\frac{1}{2^2}\) itd. Stąd możemy odgadnąć wzór ogólny ciągu
-            \(a_n = \frac{1}{2^n}.\)</p>
-        <p>Ciągi, tak samo jak pozostałe funkcje, mogą być rosnące, niemalejące, stałe, nierosnące, malejące lub
-            niemonotoniczne.
-            Aby ustalić który przypadek zachodzi, należy rozważyć różnicę \(a_{n+1} - a_n.\) Jeżeli dla każdego \(n \in
-            \mathbb{N}:\)</p>
-        <ol>
-            <li>\(a_{n+1} - a_n \gt 0\) to oznacza to, że \(a_{n+1} \gt a_n,\) czyli ciąg jest rosnący;</li>
-            <li>\(a_{n+1} - a_n \ge 0\) to oznacza to, że \(a_{n+1} \ge a_n,\) czyli ciąg jest niemalejący;</li>
-            <li>\(a_{n+1} - a_n = 0\) to oznacza to, że \(a_{n+1} = a_n,\) czyli ciąg jest stały;</li>
-            <li>\(a_{n+1} - a_n \le 0\) to oznacza to, że \(a_{n+1} \le a_n,\) czyli ciąg jest nierosnący;</li>
-            <li>\(a_{n+1} - a_n \lt 0\) to oznacza to, że \(a_{n+1} \lt a_n,\) czyli ciąg jest malejący;</li>
-            <li>\(a_{n+1} - a_n\) nie ma stałego znaku, to oznacza to, że ciąg nie jest monotoniczny.</li>
-        </ol>
-        <p><b>Przykład 2.</b> Zbadaj monotoniczność ciągu \(a_n = \frac{n}{3n + 1}.\)<br>
-            Liczymy różnicę \(a_{n+1} - a_n.\)</p>
-        <div class="scroll">$$a_{n+1} - a_n = \frac{n+1}{3(n+1) + 1} - \frac{n}{3n + 1} =
-            \frac{(n + 1)(3n + 1) - n(3n + 4)}{(3n + 4)(3n + 1)} = \frac{3n^2 + 4n + 1 - 3n^2 - 4n}{(3n + 4)(3n + 1)} =
-            \frac{1}{(3n + 4)(3n + 1)}.$$</div>
-        <p>Dla każdego \(n \in \mathbb{N} \frac{1}{(3n + 4)(3n + 1)} \gt 0,\) więc ciąg \(a_n = \frac{n}{3n + 1}\) jest
-            rosnący.</p>
-        <p><b>Przykład 3.</b> Zbadaj monotoniczność ciągu \(a_n = n^2 - 4n.\)<br>
-            Liczymy różnicę \(a_{n+1} - a_n.\)</p>
-        <div class="scroll">$$a_{n+1} - a_n = (n + 1)^2 - 4(n + 1) - (n^2 - 4n) = n^2 + 2n + 1 - 4n - 4 - n^2 + 4n =
-            2n - 3.$$</div>
-        <p>Gdy \(n = 1,\) to \(2n - 3 = 2 - 3 = -1 \lt 0,\) ale jeżeli \(n \ge 2,\) to \(2n - 3 \ge 4 - 3 = 1 \gt 0.\)
-            Oznacza to,
-            że w zależności od \(n\) wyrażenie \(a_{n+1} - a_n\) zmienia znak, czyli ciąg \(a_n = n^2 - 4n\) nie jest
-            monotoniczny.</p>
-        <p class="center"><b>Ciąg arytmetyczny</b></p>
-        <p>Ciąg arytmetyczny to specjalny rodzaj ciągu liczbowego, w którym każdy wyraz różni się od poprzedniego o
-            stałą liczbę.
-            Liczbę tę nazywa się różnicą ciągu arytmetycznego i oznacza \(r.\)
-            Ciąg arytmetyczny ma postać \((a_1, a_1 + r, a_1 + 2r, a_1 + 3r, a_1 + 4r, \dots).\)</p>
-        <p><b>Przykład 4.</b> Wyznacz wzór ogólny ciągu arytmetycznego o pierwszym wyrazie \(a_1 = 1\) i różnicy \(r =
-            3.\)<br>
-            Skoro \(a_n\) jest ciągiem arytmetycznym, to</p>
-        <div class="scroll">$$a_2 = a_1 + r, \quad a_3 = a_2 + r = a_1 + r + r = a_1 + 2r, \quad a_4 = a_3 + r =
-            a_1 + 2r + r = a_1 + 3r \mathrm{ \quad itd.}$$</div>
-        <p>Możemy tutaj zauważyć zależność \(a_n = a_1 + (n-1)r.\)
-            Pozostaje podstawić nasze wartości aby otrzymać \(a_n = a_1 + (n - 1)r = 1 + 3(n - 1) = 3n - 2.\)</p>
-        <p class="center"><b>Najważniejsze wzory związane z ciągami arytmetycznymi.</b></p>
-        <ul>
-            <li>Wzór na \(n\)-ty wyraz ciągu arytmetycznego
-                <div class="scroll">$$a_n = a_1 + (n-1)r;$$</div>
-            </li>
-            <li>Wzór na sumę pierwszych \(n\) wyrazów ciągu arytmetycznego
-                <div class="scroll">$$S_n = \frac{a_1 + a_n}{2}n;$$</div>
-            </li>
-            <li>Jeżeli \(a, b, c\) są kolejnymi wyrazami ciągu arytmetycznego, to zachodzi wzór
-                <div class="scroll">$$b = \frac{a + c}{2}.$$</div>
-            </li>
-        </ul>
-        <p><b>Przykład 5.</b> Wyznacz sumę pierwszych 20 wyrazów ciągu arytmetycznego zdefiniowanego wzorem \(a_n = 2n -
-            3.\)<br>
-            Z podanego wzoru łatwo możemy obliczyć \(a_1\) i \(a_{20}\)</p>
-        <div class="scroll">$$a_1 = 2 - 3 = -1, a_{20} = 2 \cdot 20 - 3 = 37.$$</div>
-        <p>Teraz mając wszystkie potrzebne informacje możemy skorzystać ze wzoru na sumę ciągu arytmetycznego</p>
-        <div class="scroll">$$S_{20} = \frac{a_1 + a_{20}}{2} \cdot 20 = \frac{-1 + 37}{2} \cdot 20 = 36 \cdot 10 =
-            360.$$</div>
-        <p>Odpowiedź: szukana suma wynosi 360.</p>
-        <p class="center"><b>Ciąg geometryczny</b></p>
-        <p>Ciąg geometryczny to taki, w którym kolejne wyrazy różnią się oo siebie q razy.
-            Liczbę q nazywa się ilorazem ciągu geometrycznego. Ciąg geometryczny ma postać \((a_1, a_1q, a_1q^2, a_1q^3,
-            \dots).\)</p>
-        <p class="center"><b>Najważniejsze wzory związane z ciągami geometrycznymi</b></p>
-        <ul>
-            <li>Wzór na \(n\)-ty wyraz ciągu geometrycznego
-                <div class="scroll">$$a_n = a_1 \cdot q^{n-1};$$</div>
-            </li>
-            <li>Wzór na sumę pierwszych \(n\) wyrazów ciągu geometrycznego
-                <div class="scroll">
-                    $$S_n =
-                    \begin{cases}
-                    a_1 \frac{1 - q^n}{1 - q} &, q \ne 1 \\
-                    a_1 q &, q = 1
-                    \end{cases};$$
-                </div>
-            </li>
-            <li>Jeżeli \(a, b, c\) są kolejnymi wyrazami ciągu geometrycznego, to zachodzi wzór
-                <div class="scroll">$$b^2 = ac.$$</div>
-            </li>
-        </ul>
-        <p><b>Przykład 6.</b> Trzeci wyraz ciągu geometrycznego \(a_n\) wynosi 9, a iloraz tego ciągu jest równy 3.
-            Znajdź \(a_{6}\)<br>
-            Wiemy, że \(a_6 = a_5 q = a_4 q^2 = a_3 q^3.\) Stąd łatwo możemy obliczyć szukaną wartość</p>
-        <div class="scroll">$$a_6 = a_3 q^3 = 9 \cdot 3^3 = 9 \cdot 27 = 243.$$</div>
-        <p>Odpowiedź: \(a_6 = 243.\)</p>
-        <p><b>Przykład 7.</b> Ciąg geometryczny \((a_n)\) zdefiniowany jest wzorem \(a_n = -\frac{2^n}{3}.\)
-            Znajdź iloraz oraz sumę pierwszych 10 wyrazów tego ciągu.<br></p>
-        <p>Aby znaleźć iloraz ciągu \((a_n)\) zaczniemy od sprowadzenia go do postaci \(a_n = a_1 \cdot q^{n-1}.\)</p>
-        <div class="scroll">$$-\frac{2^n}{3} = -\frac{1}{3} 2^n = -\frac{2}{3} 2^{n-1}$$</div>
-        <p>Stąd odczytujemy, że \(a_1 = -\frac{2}{3}, q = 2.\) Mając te informacje możemy podstawić je do wzoru na sumę
-        </p>
-        <div class="scroll">$$S_{10} = a_1 \frac{1 - q^{10}}{1 - q} = -\frac{2}{3} \cdot \frac{1 - 2^{10}}{1 - 2} =
-            -\frac{2(-1023)}{3(-1)} = -2 \cdot 341 = -682.$$</div>
-        <p>Odpowiedź: iloraz ciągu \(a_n\) jest równy 2, a suma pierwszych 10 wyrazów to -682.</p>
+    <p><b>Przykład 5.</b> Wyznacz sumę pierwszych 20 wyrazów ciągu arytmetycznego zdefiniowanego wzorem \(a_n = 2n -
+        3.\)<br>
+        Z podanego wzoru łatwo możemy obliczyć \(a_1\) i \(a_{20}\)</p>
+    <div class="scroll">$$a_1 = 2 - 3 = -1, a_{20} = 2 \cdot 20 - 3 = 37.$$</div>
+    <p>Teraz mając wszystkie potrzebne informacje możemy skorzystać ze wzoru na sumę ciągu arytmetycznego</p>
+    <div class="scroll">$$S_{20} = \frac{a_1 + a_{20}}{2} \cdot 20 = \frac{-1 + 37}{2} \cdot 20 = 36 \cdot 10 =
+        360.$$
     </div>
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <!-- Mathjax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <p>Odpowiedź: szukana suma wynosi 360.</p>
+    <p class="center"><b>Ciąg geometryczny</b></p>
+    <p>Ciąg geometryczny to taki, w którym kolejne wyrazy różnią się oo siebie q razy.
+        Liczbę q nazywa się ilorazem ciągu geometrycznego. Ciąg geometryczny ma postać \((a_1, a_1q, a_1q^2, a_1q^3,
+        \dots).\)</p>
+    <p class="center"><b>Najważniejsze wzory związane z ciągami geometrycznymi</b></p>
+    <ul>
+        <li>Wzór na \(n\)-ty wyraz ciągu geometrycznego
+            <div class="scroll">$$a_n = a_1 \cdot q^{n-1};$$</div>
+        </li>
+        <li>Wzór na sumę pierwszych \(n\) wyrazów ciągu geometrycznego
+            <div class="scroll">
+                $$S_n =
+                \begin{cases}
+                a_1 \frac{1 - q^n}{1 - q} &, q \ne 1 \\
+                a_1 q &, q = 1
+                \end{cases};$$
+            </div>
+        </li>
+        <li>Jeżeli \(a, b, c\) są kolejnymi wyrazami ciągu geometrycznego, to zachodzi wzór
+            <div class="scroll">$$b^2 = ac.$$</div>
+        </li>
+    </ul>
+    <p><b>Przykład 6.</b> Trzeci wyraz ciągu geometrycznego \(a_n\) wynosi 9, a iloraz tego ciągu jest równy 3.
+        Znajdź \(a_{6}\)<br>
+        Wiemy, że \(a_6 = a_5 q = a_4 q^2 = a_3 q^3.\) Stąd łatwo możemy obliczyć szukaną wartość</p>
+    <div class="scroll">$$a_6 = a_3 q^3 = 9 \cdot 3^3 = 9 \cdot 27 = 243.$$</div>
+    <p>Odpowiedź: \(a_6 = 243.\)</p>
+    <p><b>Przykład 7.</b> Ciąg geometryczny \((a_n)\) zdefiniowany jest wzorem \(a_n = -\frac{2^n}{3}.\)
+        Znajdź iloraz oraz sumę pierwszych 10 wyrazów tego ciągu.<br></p>
+    <p>Aby znaleźć iloraz ciągu \((a_n)\) zaczniemy od sprowadzenia go do postaci \(a_n = a_1 \cdot q^{n-1}.\)</p>
+    <div class="scroll">$$-\frac{2^n}{3} = -\frac{1}{3} 2^n = -\frac{2}{3} 2^{n-1}$$</div>
+    <p>Stąd odczytujemy, że \(a_1 = -\frac{2}{3}, q = 2.\) Mając te informacje możemy podstawić je do wzoru na sumę
+    </p>
+    <div class="scroll">$$S_{10} = a_1 \frac{1 - q^{10}}{1 - q} = -\frac{2}{3} \cdot \frac{1 - 2^{10}}{1 - 2} =
+        -\frac{2(-1023)}{3(-1)} = -2 \cdot 341 = -682.$$
+    </div>
+    <p>Odpowiedź: iloraz ciągu \(a_n\) jest równy 2, a suma pierwszych 10 wyrazów to -682.</p>
+</div>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- Mathjax -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
-
 </html>
