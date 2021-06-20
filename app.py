@@ -11,7 +11,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', content='quiz')
 
-
 @app.route('/<content>')
 def page(content):
     return render_template('index.html', content=content)
