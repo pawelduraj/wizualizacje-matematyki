@@ -16,6 +16,7 @@
 
     <!-- Stylesheet from static directory -->
     <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
+
     <!-- MathJax-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -27,20 +28,24 @@
             <div class="nav-wrapper container">
                 <a href="" class="brand-logo">MatWiz</a> 
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <!-- sliczny ten navigation bar krzysiu ale na tej glownej stronie by sie przydalo to menu dac nizej zeby rzeczywiscie sie na niej cos znajdowalo:]  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <!-- sliczny ten navigation bar krzysiu ale na tej glownej stronie by sie przydalo
+                     to menu dac nizej zeby rzeczywiscie sie na niej cos znajdowalo :]
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/">Quiz</a></li>
                     <li><a href="/problem">Zagadnienie</a></li>
                     <li><a href="/about">O nas</a></li>
-                </ul>
-             </div> -->
+                </ul> -->
+             </div>
         </nav>
     </div>
     <ul class="sidenav" id="mobile-demo">
         <li><a href="/">Quiz</a></li>
-        <li><a href="/problem">Zagadnienia</a></li>
+        <li><a href="/problems">Zagadnienia</a></li>
         <li><a href="/about">O nas</a></li> 
     </ul>
-    <div class="title"> Tu jakiś ładny wstęp cssa ogarne w niedziele prosze nie krzyczcie to bedzie ladnie wygladac obiecuje </div>
+    <div class="title">
+        Tu jakiś ładny wstęp cssa ogarne w niedziele prosze nie krzyczcie to bedzie ladnie wygladac obiecuje
+    </div>
     <div class="menu">
         <ul>
             <li>
@@ -58,12 +63,8 @@
                   </div>
                 <a href="/"> wyniki quizu?</a>
 
-                
-               
-
             </li>
         </ul>
     </div>
-
 </body>
 </html>

@@ -15,6 +15,7 @@
 
     <!-- Stylesheet from static directory -->
     <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
+
     <!-- MathJax-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -27,7 +28,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Quiz</a></li>
-                <li><a href="/problem">Zagadnienie</a></li>
+                <li><a href="/problems">Zagadnienia</a></li>
                 <li><a href="/about">O nas</a></li>
             </ul>
         </div>
@@ -35,12 +36,12 @@
 </div>
 <ul class="sidenav" id="mobile-demo">
     <li><a href="/">Quiz</a></li>
-    <li><a href="/problem">Zagadnienie</a></li>
+    <li><a href="/problems">Zagadnienia</a></li>
     <li><a href="/about">O nas</a></li>
 </ul>
-    <div class='main'>
-        <h1 class="center">Ciągi liczbowe</h1>
-    </div>
-</body>
 
+<div id="content" class="container z-depth-2">
+    <h1 class="center">Ciągi liczbowe</h1>
+</div>
+</body>
 </html>

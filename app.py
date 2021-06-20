@@ -35,8 +35,8 @@ def quadratic_plots(a, b, c):
     ax = fig.subplots()
     delta = b**2 - 4*a*c
     if delta > 0:
-        x1 = (-b - delta**(0.5))/(2*a)
-        x2 = (-b + delta**(0.5))/(2*a)
+        x1 = (-b - delta**0.5)/(2*a)
+        x2 = (-b + delta**0.5)/(2*a)
         x = np.linspace(x1 - 0.25*abs(x1-x2), x2 + 0.25*abs(x1-x2), 1000)
         ax.plot(x1, 0, 'ro')
         ax.plot(x2, 0, 'ro')
@@ -46,7 +46,6 @@ def quadratic_plots(a, b, c):
     y1 = a*x**2 + b*x + c
     ax.plot(x, y1)
     ax.plot(x, 0*x)
-    fig.patch.set_facecolor('#e8eaf6')
     buf = BytesIO()
     fig.savefig(buf, format='png')
     data = base64.b64encode(buf.getbuffer()).decode('ascii')

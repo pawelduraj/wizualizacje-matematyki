@@ -12,34 +12,37 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Optimize for mobile view -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Stylesheet from static directory -->
     <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
+
     <!-- MathJax-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav class="indigo darken-2">
-            <div class="nav-wrapper container">
-                <a href="" class="brand-logo">MatWiz</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/">Quiz</a></li>
-                    <li><a href="/problem">Zagadnienie</a></li>
-                    <li><a href="/about">O nas</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="/">Quiz</a></li>
-        <li><a href="/problem">Zagadnienie</a></li>
-        <li><a href="/about">O nas</a></li>
-    </ul>
+<div class="navbar-fixed">
+    <nav class="indigo darken-2">
+        <div class="nav-wrapper container">
+            <a href="" class="brand-logo">MatWiz</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Quiz</a></li>
+                <li><a href="/problems">Zagadnienia</a></li>
+                <li><a href="/about">O nas</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/">Quiz</a></li>
+    <li><a href="/problems">Zagadnienia</a></li>
+    <li><a href="/about">O nas</a></li>
+</ul>
+
+<div id="content" class="container z-depth-2">
     <h1 class="center">Rozwiązywanie równań kwadratowych</h1>
     <p>Równanie kwadratowe to równanie postaci \(ax^2 + bx + c = 0,\) gdzie \(a, b, c \in \mathbb{R}\) i \(a \ne 0\).
         Przez rozwiązanie takiego równania rozumie się wyznaczenie wszystkich \(x \in \mathbb{R}\) spełniających to
@@ -101,7 +104,7 @@
         $$x_2 = \frac{-b + \sqrt{\Delta}}{2a} = \frac{-2 + \sqrt{64}}{6} = \frac{-2 + 8}{6} = 1.$$
         Następnie szkicujemy wzór funkcji \(f(x) = 3x^2 + 2x - 5\) i znajdujemy zbiór takich \(x\), dla których \(f(x)
         \lt 0.\)</p>
-    <p><img src="{{ plot1 }}" alt="Wykres" width="350" height="300" class="center"></p>
+    <p><img src="{{ plot1 }}" alt="Wykres" width="350" height="300" class="materialboxed"></p>
     <p>Stąd dostajemy odpowiedź \(x \in [-\frac{5}{3}, 1].\)</p>
     <p><b>Przykład 2.</b> Rozwiąż nierówność \(3x^2 + 4x + 2 \ge 0.\)<br>
         Licząc deltę otrzymujemy
@@ -122,25 +125,31 @@
     </p>
     <h3 class="center">Wzory Viete'a</h3>
     <p>Jeżeli \(x_1, x_2\) są rozwiązaniami równania kwadratowego \(ax^2 + bx + c = 0,\) to zachodzą następujące wzory:
-        <ol>
-            <li>\(x_1 + x_2 = \frac{-b}{a};\)</li>
-            <li>\(x_1 \cdot x_2 = \frac{c}{a}.\)</li>
-        </ol>
+    <ol>
+        <li>\(x_1 + x_2 = \frac{-b}{a};\)</li>
+        <li>\(x_1 \cdot x_2 = \frac{c}{a}.\)</li>
+    </ol>
     </p>
     <p>Dowód:<br>
-        $$x_1 + x_2 = \frac{-b - \sqrt{\Delta}}{2a} + \frac{-b + \sqrt{\Delta}}{2a} = \frac{-b - \sqrt{\Delta} - b + \sqrt{\Delta}}{2a} =
+        $$x_1 + x_2 = \frac{-b - \sqrt{\Delta}}{2a} + \frac{-b + \sqrt{\Delta}}{2a} = \frac{-b - \sqrt{\Delta} - b +
+        \sqrt{\Delta}}{2a} =
         \frac{-2b}{2a} = \frac{-b}{a};$$
-        $$x_1 \cdot x_2 = \frac{-b - \sqrt{\Delta}}{2a} \cdot \frac{-b + \sqrt{\Delta}}{2a} = \frac{(-b - \sqrt{\Delta)}(-b + \sqrt{\Delta)}}{4a^2} =
+        $$x_1 \cdot x_2 = \frac{-b - \sqrt{\Delta}}{2a} \cdot \frac{-b + \sqrt{\Delta}}{2a} = \frac{(-b -
+        \sqrt{\Delta)}(-b + \sqrt{\Delta)}}{4a^2} =
         \frac{b^2 - \Delta}{4a^2} = \frac{b^2 - (b^2 - 4ac)}{4a^2} = \frac{4ac}{4a^2} = \frac{c}{a}.$$</p>
     <p>Wzory Viete'a są bardzo przydatne na przykład przy rozwiązywaniu równań kwadratowych z parametrem.<br>
-        <b>Przykład 1.</b> Dla jakich wartości parametru \(m \in \mathbb{R}\) równanie \(x^2 + mx + m = 0\) ma dwa różne rozwiązania rzeczywiste przeciwnych znaków?<br>
-            Podane równanie będzie miało dwa rozwiązania wtedy, gdy wyróżnik będzie większy od 0. zaczynamy więc od rozwiązania nierówności \(\Delta \gt 0.\)
-            $$\Delta = b^2 - 4ac = m^2 - 4m = m(m - 4). \quad \Delta \gt 0 \Leftrightarrow m(m-4) \gt 0 \Leftrightarrow m \in (-\infty, 0) \cup (4, \infty).$$
-            Teraz pozostaje sprawdzić dla jakich \(m \in (-\infty, 0) \cup (4, \infty)\) \(x_1\) i \(x_2\) mają przeciwne znaki.
-            Dwie liczby mają przeciwne znaki wtedy i tylko wtedy, gdy ich iloczyn jest ujemny. Skorzystamy w tym miejscu z poznanych wzorów Viete'a.
-            $$x_1 \cdot x_2 = \frac{c}{a} = \frac{m}{1} = m. \quad x_1 \cdot x_2 \lt 0 \Leftrightarrow m \lt 0.$$
-            Stąd otrzymujemy odpowiedź \(m \in (-\infty, 0).\)
+        <b>Przykład 1.</b> Dla jakich wartości parametru \(m \in \mathbb{R}\) równanie \(x^2 + mx + m = 0\)
+        ma dwa różne rozwiązania rzeczywiste przeciwnych znaków?<br>
+        Podane równanie będzie miało dwa rozwiązania wtedy, gdy wyróżnik będzie większy od 0. zaczynamy więc od
+        rozwiązania nierówności \(\Delta \gt 0.\)
+        $$\Delta = b^2 - 4ac = m^2 - 4m = m(m - 4). \quad \Delta \gt 0 \Leftrightarrow m(m-4) \gt 0 \Leftrightarrow m
+        \in (-\infty, 0) \cup (4, \infty).$$
+        Teraz pozostaje sprawdzić dla jakich \(m \in (-\infty, 0) \cup (4, \infty)\) \(x_1\) i \(x_2\) mają przeciwne
+        znaki. Dwie liczby mają przeciwne znaki wtedy i tylko wtedy, gdy ich iloczyn jest ujemny.
+        Skorzystamy w tym miejscu z poznanych wzorów Viete'a.
+        $$x_1 \cdot x_2 = \frac{c}{a} = \frac{m}{1} = m. \quad x_1 \cdot x_2 \lt 0 \Leftrightarrow m \lt 0.$$
+        Stąd otrzymujemy odpowiedź \(m \in (-\infty, 0).\)
     </p>
+</div>
 </body>
-
 </html>
