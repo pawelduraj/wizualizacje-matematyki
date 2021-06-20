@@ -8,10 +8,6 @@ function check(zadanie) {
     }
 }
 document.addEventListener('DOMContentLoaded', function() {
-    const elems = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elems);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const elems = document.querySelectorAll('.materialboxed');
-    M.Materialbox.init(elems);
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));
+    M.Materialbox.init(document.querySelectorAll('.materialboxed'));
 });
