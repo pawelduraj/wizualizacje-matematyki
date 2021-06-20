@@ -12,16 +12,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Optimize for mobile view -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Stylesheet from static directory -->
     <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
-    <!-- MathJax-->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="navbar-fixed">
         <nav class="indigo darken-2">
             <div class="nav-wrapper container">
@@ -42,6 +40,29 @@
     </ul>
     <div class="maintext">
     <h1 class="center">Rozwiązywanie równań kwadratowych</h1>
+=======
+<div class="navbar-fixed">
+    <nav class="indigo darken-2">
+        <div class="nav-wrapper container">
+            <a href="" class="brand-logo">MatWiz</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Quiz</a></li>
+                <li><a href="/problems">Zagadnienia</a></li>
+                <li><a href="/about">O nas</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/">Quiz</a></li>
+    <li><a href="/problems">Zagadnienia</a></li>
+    <li><a href="/about">O nas</a></li>
+</ul>
+
+<div id="content" class="container z-depth-2">
+    <h3 class="center">Rozwiązywanie równań kwadratowych</h3>
+>>>>>>> 004f60fe5124de152a3b54034c944ad8a42b1a31
     <p>Równanie kwadratowe to równanie postaci \(ax^2 + bx + c = 0,\) gdzie \(a, b, c \in \mathbb{R}\) i \(a \ne 0\).
         Przez rozwiązanie takiego równania rozumie się wyznaczenie wszystkich \(x \in \mathbb{R}\) spełniających to
         równanie.
@@ -53,7 +74,7 @@
         zdefiniowane jako \(\Delta = b^2 - 4ac\). Liczba rozwiązań równania zależy od znaku wyróżnika:
     <ol>
         <li>Jeżeli \(\Delta \gt 0\), to równanie ma dwa rozwiązania rzeczywiste:<br>
-            $$x_1 = \frac{-b - \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}.$$
+            <div class="scroll">$$x_1 = \frac{-b - \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}.$$</div>
         </li>
         <li>Jeżeli \(\Delta = 0\), to równanie ma jedno rozwiązanie rzeczywiste<br>
             $$x = \frac{-b}{2a}.$$
@@ -63,19 +84,19 @@
     </p>
     <p><b>Przykład 1.</b> Rozwiąż równanie \(x^2 + 3x - 4 = 0\).<br>
         Rozwiązywanie równania zaczynamy od policzenia wyróżnika
-        $$\Delta = b^2 - 4ac = 3^2 -4(1)(-4) = 9 + 16 = 25.$$
+    <div class="scroll">$$\Delta = b^2 - 4ac = 3^2 -4(1)(-4) = 9 + 16 = 25.$$</div>
         Delta wyszła dodatnia, zatem równanie ma dwa rzeczywiste rozwiązania. Możemy je wyliczyć używając odpowiednich
         wzorów
-        $$x_1 = \frac{-b - \sqrt{\Delta}}{2a} = \frac{-3 - \sqrt{25}}{2} = \frac{-3 - 5}{2} = -4,$$
-        $$x_2 = \frac{-b + \sqrt{\Delta}}{2a} = \frac{-3 + \sqrt{25}}{2} = \frac{-3 + 5}{2} = 1.$$
+    <div class="scroll">$$x_1 = \frac{-b - \sqrt{\Delta}}{2a} = \frac{-3 - \sqrt{25}}{2} = \frac{-3 - 5}{2} = -4,$$</div>
+    <div class="scroll">$$x_2 = \frac{-b + \sqrt{\Delta}}{2a} = \frac{-3 + \sqrt{25}}{2} = \frac{-3 + 5}{2} = 1.$$</div>
         Stąd dostajemy odpowiedź \(x = -4 \lor x = 1\).
     </p>
     <p><b>Przykład 2.</b> Rozwiąż równanie \(2x^2 + 6x + 5 = 0\).<br>
         Liczymy deltę
-        $$\Delta = b^2 - 4ac = 6^2 - 4(2)(5) = 36 - 40 = -4.$$
+    <div class="scroll">$$\Delta = b^2 - 4ac = 6^2 - 4(2)(5) = 36 - 40 = -4.$$</div>
         Wyróżnik okazał się ujemny, zatem równanie nie ma rozwiązań w zbiorze liczb rzeczywistych.
     </p>
-    <h2 class="center">Rozwiązywanie nierówności kwadratowych</h2>
+    <h3 class="center">Rozwiązywanie nierówności kwadratowych</h3>
     <p>Do rozwiązania nierówności kwadratowych potrzebne są umiejętności rozwiązywania równań kwadratowych i rysowania
         wykresów funkcji.
         Nierówność kwadratowa może przyjmować jedną z czterech postaci:
@@ -96,17 +117,17 @@
     </p>
     <p><b>Przykład 1.</b> Rozwiąż nierówność \(3x^2 + 2x - 5 \lt 0.\)<br>
         W pierwszym kroku znajdujemy rozwiązania równania \(3x^2 + 2x - 5 = 0.\) W tym celu liczymy wyróżnik
-        $$\Delta = b^2 - 4ac = 2^2 - 4(3)(-5) = 4 + 60 = 64.$$
+    <div class="scroll">$$\Delta = b^2 - 4ac = 2^2 - 4(3)(-5) = 4 + 60 = 64.$$</div>
         Delta okazała się dodatnia, czyli równanie ma dwa rozwiązania:
-        $$x_1 = \frac{-b - \sqrt{\Delta}}{2a} = \frac{-2 - \sqrt{64}}{6} = \frac{-2 - 8}{6} = -\frac{5}{3},$$
-        $$x_2 = \frac{-b + \sqrt{\Delta}}{2a} = \frac{-2 + \sqrt{64}}{6} = \frac{-2 + 8}{6} = 1.$$
+    <div class="scroll">$$x_1 = \frac{-b - \sqrt{\Delta}}{2a} = \frac{-2 - \sqrt{64}}{6} = \frac{-2 - 8}{6} = -\frac{5}{3},$$</div>
+    <div class="scroll">$$x_2 = \frac{-b + \sqrt{\Delta}}{2a} = \frac{-2 + \sqrt{64}}{6} = \frac{-2 + 8}{6} = 1.$$</div>
         Następnie szkicujemy wzór funkcji \(f(x) = 3x^2 + 2x - 5\) i znajdujemy zbiór takich \(x\), dla których \(f(x)
         \lt 0.\)</p>
-    <p><img src="{{ plot1 }}" alt="Wykres" width="350" height="300" class="center"></p>
+    <img src="{{ plot1 }}" alt="Wykres" width="320" class="materialboxed chart">
     <p>Stąd dostajemy odpowiedź \(x \in [-\frac{5}{3}, 1].\)</p>
     <p><b>Przykład 2.</b> Rozwiąż nierówność \(3x^2 + 4x + 2 \ge 0.\)<br>
         Licząc deltę otrzymujemy
-        $$\Delta = b^2 - 4ac = 4^2 - 4(3)(2) = 16 - 24 = -8$$
+    <div class="scroll">$$\Delta = b^2 - 4ac = 4^2 - 4(3)(2) = 16 - 24 = -8$$</div>
         Ujemny wyróżnik oznacza brak rozwiązań równania \(3x^2 + 4x + 2 = 0,\) czyli wykres funkcji \(f(x) = 3x^2 + 4x +
         2\)
         leży w całości nad lub pod osią OX. Aby ustalić która z tych opcji zachodzi możemy zwrócić uwagę na znak
@@ -116,33 +137,44 @@
         \(x^2\) to 3, więc dla każdego \(x \in \mathbb{R} \quad f(x) \gt 0.\) Aby upewnić się, że nie popełniliśmy
         błędu, możemy
         naszkicować wykres funkcji \(f(x) = 3x^2 + 4x + 2.\)</p>
-    <p><img src="{{ plot2 }}" alt="Wykres" width="350" height="300" class="center"></p>
+    <img src="{{ plot2 }}" alt="Wykres" width="320" class="materialboxed chart">
     <p>Widzimy że w istocie dla każdego \(x \in \mathbb{R} \quad 3x^2 + 4x + 2 \gt 0,\) więc rozwiązaniem nierówności
         \(3x^2 + 4x + 2 \ge 0\)
         jest cały zbiór \(\mathbb{R}.\)
     </p>
     <h3 class="center">Wzory Viete'a</h3>
     <p>Jeżeli \(x_1, x_2\) są rozwiązaniami równania kwadratowego \(ax^2 + bx + c = 0,\) to zachodzą następujące wzory:
-        <ol>
-            <li>\(x_1 + x_2 = \frac{-b}{a};\)</li>
-            <li>\(x_1 \cdot x_2 = \frac{c}{a}.\)</li>
-        </ol>
+    <ol>
+        <li>\(x_1 + x_2 = \frac{-b}{a};\)</li>
+        <li>\(x_1 \cdot x_2 = \frac{c}{a}.\)</li>
+    </ol>
     </p>
     <p>Dowód:<br>
-        $$x_1 + x_2 = \frac{-b - \sqrt{\Delta}}{2a} + \frac{-b + \sqrt{\Delta}}{2a} = \frac{-b - \sqrt{\Delta} - b + \sqrt{\Delta}}{2a} =
-        \frac{-2b}{2a} = \frac{-b}{a};$$
-        $$x_1 \cdot x_2 = \frac{-b - \sqrt{\Delta}}{2a} \cdot \frac{-b + \sqrt{\Delta}}{2a} = \frac{(-b - \sqrt{\Delta)}(-b + \sqrt{\Delta)}}{4a^2} =
-        \frac{b^2 - \Delta}{4a^2} = \frac{b^2 - (b^2 - 4ac)}{4a^2} = \frac{4ac}{4a^2} = \frac{c}{a}.$$</p>
+        <div class="scroll">$$x_1 + x_2 = \frac{-b - \sqrt{\Delta}}{2a} + \frac{-b + \sqrt{\Delta}}{2a} = \frac{-b - \sqrt{\Delta} - b +
+        \sqrt{\Delta}}{2a} =
+    \frac{-2b}{2a} = \frac{-b}{a};$$</div>
+        <div class="scroll">$$x_1 \cdot x_2 = \frac{-b - \sqrt{\Delta}}{2a} \cdot \frac{-b + \sqrt{\Delta}}{2a} = \frac{(-b -
+        \sqrt{\Delta)}(-b + \sqrt{\Delta)}}{4a^2} =
+            \frac{b^2 - \Delta}{4a^2} = \frac{b^2 - (b^2 - 4ac)}{4a^2} = \frac{4ac}{4a^2} = \frac{c}{a}.$$</div></p>
     <p>Wzory Viete'a są bardzo przydatne na przykład przy rozwiązywaniu równań kwadratowych z parametrem.<br>
-        <b>Przykład 1.</b> Dla jakich wartości parametru \(m \in \mathbb{R}\) równanie \(x^2 + mx + m = 0\) ma dwa różne rozwiązania rzeczywiste przeciwnych znaków?<br>
-            Podane równanie będzie miało dwa rozwiązania wtedy, gdy wyróżnik będzie większy od 0. zaczynamy więc od rozwiązania nierówności \(\Delta \gt 0.\)
-            $$\Delta = b^2 - 4ac = m^2 - 4m = m(m - 4). \quad \Delta \gt 0 \Leftrightarrow m(m-4) \gt 0 \Leftrightarrow m \in (-\infty, 0) \cup (4, \infty).$$
-            Teraz pozostaje sprawdzić dla jakich \(m \in (-\infty, 0) \cup (4, \infty)\) \(x_1\) i \(x_2\) mają przeciwne znaki.
-            Dwie liczby mają przeciwne znaki wtedy i tylko wtedy, gdy ich iloczyn jest ujemny. Skorzystamy w tym miejscu z poznanych wzorów Viete'a.
-            $$x_1 \cdot x_2 = \frac{c}{a} = \frac{m}{1} = m. \quad x_1 \cdot x_2 \lt 0 \Leftrightarrow m \lt 0.$$
-            Stąd otrzymujemy odpowiedź \(m \in (-\infty, 0).\)
+        <b>Przykład 1.</b> Dla jakich wartości parametru \(m \in \mathbb{R}\) równanie \(x^2 + mx + m = 0\)
+        ma dwa różne rozwiązania rzeczywiste przeciwnych znaków?<br>
+        Podane równanie będzie miało dwa rozwiązania wtedy, gdy wyróżnik będzie większy od 0. zaczynamy więc od
+        rozwiązania nierówności \(\Delta \gt 0.\)
+        <div class="scroll">$$\Delta = b^2 - 4ac = m^2 - 4m = m(m - 4). \quad \Delta \gt 0 \Leftrightarrow m(m-4) \gt 0 \Leftrightarrow m
+    \in (-\infty, 0) \cup (4, \infty).$$</div>
+        Teraz pozostaje sprawdzić dla jakich \(m \in (-\infty, 0) \cup (4, \infty)\) \(x_1\) i \(x_2\) mają przeciwne
+        znaki. Dwie liczby mają przeciwne znaki wtedy i tylko wtedy, gdy ich iloczyn jest ujemny.
+        Skorzystamy w tym miejscu z poznanych wzorów Viete'a.
+    <div class="scroll">$$x_1 \cdot x_2 = \frac{c}{a} = \frac{m}{1} = m. \quad x_1 \cdot x_2 \lt 0 \Leftrightarrow m \lt 0.$$</div>
+        Stąd otrzymujemy odpowiedź \(m \in (-\infty, 0).\)
     </p>
-    </div>
+</div>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- Mathjax -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
-
 </html>

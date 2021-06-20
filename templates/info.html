@@ -25,7 +25,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/">Quiz</a></li>
-                    <li><a href="/problem">Zagadnienia</a></li>
+                    <li><a href="/problems">Zagadnienia</a></li>
                     <li><a href="/about">O nas</a></li>
                 </ul>
              </div>
@@ -33,9 +33,16 @@
     </div>
     <ul class="sidenav" id="mobile-demo">
         <li><a href="/">Quiz</a></li>
-        <li><a href="/problem">Zagadnienia</a></li>
+        <li><a href="/problems">Zagadnienia</a></li>
         <li><a href="/about">O nas</a></li> 
     </ul>
-    siema tu beda jakies informacje o nas i o projekcie szczerze nie wiem jak duzo/malo mam tu napisac i tu w sumie bedzie sam tekst raczej (ew jakies obrazki) wiec na razie zostawiam to tak:3
+    siema tu beda jakies informacje o nas i o projekcie szczerze nie wiem jak duzo/malo mam tu napisac
+    i tu w sumie bedzie sam tekst raczej (ew jakies obrazki) wiec na razie zostawiam to tak:3
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- Mathjax -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
