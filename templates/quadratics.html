@@ -16,10 +16,6 @@
 
     <!-- Stylesheet from static directory -->
     <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" type="text/css">
-
-    <!-- MathJax-->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -104,7 +100,7 @@
         $$x_2 = \frac{-b + \sqrt{\Delta}}{2a} = \frac{-2 + \sqrt{64}}{6} = \frac{-2 + 8}{6} = 1.$$
         Następnie szkicujemy wzór funkcji \(f(x) = 3x^2 + 2x - 5\) i znajdujemy zbiór takich \(x\), dla których \(f(x)
         \lt 0.\)</p>
-    <p><img src="{{ plot1 }}" alt="Wykres" width="350" height="300" class="materialboxed"></p>
+    <img src="{{ plot1 }}" alt="Wykres" width="350" height="300" class="materialboxed">
     <p>Stąd dostajemy odpowiedź \(x \in [-\frac{5}{3}, 1].\)</p>
     <p><b>Przykład 2.</b> Rozwiąż nierówność \(3x^2 + 4x + 2 \ge 0.\)<br>
         Licząc deltę otrzymujemy
@@ -118,7 +114,7 @@
         \(x^2\) to 3, więc dla każdego \(x \in \mathbb{R} \quad f(x) \gt 0.\) Aby upewnić się, że nie popełniliśmy
         błędu, możemy
         naszkicować wykres funkcji \(f(x) = 3x^2 + 4x + 2.\)</p>
-    <p><img src="{{ plot2 }}" alt="Wykres" width="350" height="300" class="center"></p>
+    <img src="{{ plot2 }}" alt="Wykres" width="350" height="300" class="materialboxed">
     <p>Widzimy że w istocie dla każdego \(x \in \mathbb{R} \quad 3x^2 + 4x + 2 \gt 0,\) więc rozwiązaniem nierówności
         \(3x^2 + 4x + 2 \ge 0\)
         jest cały zbiór \(\mathbb{R}.\)
@@ -151,5 +147,11 @@
         Stąd otrzymujemy odpowiedź \(m \in (-\infty, 0).\)
     </p>
 </div>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- Mathjax -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

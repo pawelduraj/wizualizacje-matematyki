@@ -9,5 +9,9 @@ function check(zadanie) {
 }
 document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.sidenav');
-    const instances = M.Sidenav.init(elems);
+    M.Sidenav.init(elems);
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('.materialboxed');
+    M.Materialbox.init(elems);
 });
