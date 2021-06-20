@@ -7,17 +7,16 @@ import numpy as np
 app = Flask(__name__)
 
 @app.route('/')
-def glowna():
-    return render_template('glowna.html')
+def quiz():
+    return render_template('quiz.html')
 
-@app.route('/quiz')
-def index():
-    return render_template('index.html', content='quiz')
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
-
-@app.route('/<content>')
-def page(content):
-    return render_template('index.html', content=content)
+@app.route('/problems')
+def problems():
+    return render_template('problems.html')
 
 @app.route('/quadratics')
 def topic1():
@@ -53,6 +52,11 @@ def quadratic_plots(a, b, c):
     fig.savefig(buf, format='png')
     data = base64.b64encode(buf.getbuffer()).decode('ascii')
     return f'data:image/png;base64,{data}'
+
+@app.errorhandler(404)
+def not_found(e):
+    print(e)
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run()
