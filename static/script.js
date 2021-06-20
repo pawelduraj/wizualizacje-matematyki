@@ -11,3 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(document.querySelectorAll('.sidenav'));
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
 });
+
+window.MathJax = {
+    startup: {
+        ready: () => {
+            MathJax.startup.defaultReady();
+            MathJax.startup.promise.then(() => {
+                document.getElementById('mathjax-content').style.opacity = '100';
+            });
+        }
+    }
+};
