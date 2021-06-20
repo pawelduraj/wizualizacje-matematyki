@@ -6,8 +6,11 @@ import numpy as np
 
 app = Flask(__name__)
 
-
 @app.route('/')
+def glowna():
+    return render_template('glowna.html')
+
+@app.route('/quiz')
 def index():
     return render_template('index.html', content='quiz')
 
