@@ -10,10 +10,9 @@ app = Flask(__name__)
 def quiz():
     return render_template('quiz.html')
 
-
-@app.route('/<content>')
-def page(content):
-    return render_template('index.html', content=content)
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/problems')
 def problems():
