@@ -59,6 +59,7 @@ div.scroll {
 
 .image {
     max-width: 100%;
+    display: flex;
 }
 
 .sidenav li > a {
