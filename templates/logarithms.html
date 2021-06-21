@@ -72,6 +72,39 @@
         <li>\(a^{\log_{a} b} = b;\)</li>
         <li>\(\log_{a} b = \frac{\log_{c} b}{\log_{c} a}.\)</li>
     </ol>
+    <p><b>Dowód</b></p>
+    <ol>
+        <li>
+            Niech \(\log_{a} b = x, \log_{a} c = y.\) Wtedy z definicji logarytmu \(a^x = b, a^y = c.\)
+            <div class="scroll">$$b \cdot c = a^x \cdot a^y = a^{x + y} \Rightarrow \log_{a} (b \cdot c) = \log_{a} (a^{x + y})
+                = x + y = \log_{a} b + \log_{a} c.$$
+            </div>
+            Czyli ostatecznie \(\log_{a} b + \log_{a} c = \log_{a} (b \cdot c).\)
+        </li>
+        <li>
+            Niech \(\log_{a} b = x, \log_{a} c = y.\) Wtedy z definicji logarytmu \(a^x = b, a^y = c.\)
+            <div class="scroll">$$\frac{b}{c} = \frac{a^x}{a^y} = a^{x - y} \Rightarrow \log_{a} (\frac{b}{c}) = \log_{a} (a^{x - y})
+                = x - y = \log_{a} b - \log_{a} c.$$
+            </div>
+            Czyli ostatecznie \(\log_{a} b - \log_{a} c = \log_{a} (\frac{b}{c}).\)
+        </li>
+        <li>
+            Niech \(\log_{a} b = x.\) Wtedy z definicji logarytmu \(a^x = b.\)
+            <div class="scroll">$$a^x = b \Rightarrow a^{nx} = b^n \Rightarrow log_{a} (a^{nx}) = log_{a} (b^n)
+                \Rightarrow nx = log_{a} (b^n) \Rightarrow n \log_{a} b = log_{a} (b^n).$$</div>
+            Czyli ostatecznie \(log_{a} (b^n) = n \log_{a} b.\)
+        </li>
+        <li>
+            Niech \(\log_{a} b = x.\) Wtedy z definicji logarytmu \(a^x = b.\)
+            <div class="scroll">$$a^{log_a b} = a^x = b.$$</div>
+            Czyli ostatecznie \(a^{\log_{a} b} = b.\)
+        </li>
+        <li>Niech \(\log_{a} b = x.\) Wtedy z definicji logarytmu \(a^x = b.\)
+            <div class="scroll">$$\log_{c} b = \log_{c} (a^x) = x \log_{c} a.$$</div>
+            <div class="scroll">$$\frac{\log_{c} b}{\log_{c} a} = \frac{x \log_{c} a}{\log_{c} a} = x = \log_{a} b.$$</div>
+            Czyli ostatecznie \(\log_{a} b = \frac{\log_{c} b}{\log_{c} a}.\)
+        </li>
+    </ol>
     <p><b>Przykład 2.</b> Oblicz \(\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3}.\)<br></p>
     <div class="scroll">$$\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3} = \frac{\log_{5} 4 + \frac{\log_{5}
         4}{\log_{5} 25}}{\log_{5} 3} =
