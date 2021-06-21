@@ -8,6 +8,14 @@ function check(zadanie) {
     }
 }
 document.addEventListener('DOMContentLoaded', function() {
+    M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'),
+        {
+            alignment: 'center',
+            autoTrigger: false,
+            coverTrigger: false,
+            hover: true
+        });
+    M.Collapsible.init(document.querySelectorAll('.collapsible'));
     M.Sidenav.init(document.querySelectorAll('.sidenav'));
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
 });

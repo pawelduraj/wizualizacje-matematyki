@@ -60,3 +60,7 @@ div.scroll {
 .image {
     max-width: 100%;
 }
+
+.sidenav li > a {
+    padding: 0 16px;
+}

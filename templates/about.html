@@ -33,13 +33,18 @@
 
 <body>
 <div class="navbar-fixed">
+    <ul id="dropdown" class="dropdown-content">
+        <li><a href="/quadratics">Równania i nierówności kwadratowe</a></li>
+        <li><a href="/logarithms">Logarytmy</a></li>
+        <li><a href="/sequences">Ciągi</a></li>
+    </ul>
     <nav class="indigo darken-2">
         <div class="nav-wrapper container">
             <a href="" class="brand-logo">MatWiz</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Quiz</a></li>
-                <li><a href="/problems">Zagadnienia</a></li>
+                <li><a class="dropdown-trigger" href="/problems" data-target="dropdown">Zagadnienia<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a href="/about">O nas</a></li>
             </ul>
         </div>
@@ -47,7 +52,20 @@
 </div>
 <ul class="sidenav" id="mobile-demo">
     <li><a href="/">Quiz</a></li>
-    <li><a href="/problems">Zagadnienia</a></li>
+    <li>
+        <ul class="collapsible">
+            <li>
+                <a class="collapsible-header">Zagadnienia</a>
+                <div class="collapsible-body">
+                    <ul id="" class="">
+                        <li><a href="/quadratics">Równania i nierówności kwadratowe</a></li>
+                        <li><a href="/logarithms">Logarytmy</a></li>
+                        <li><a href="/sequences">Ciągi</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+      </li>
     <li><a href="/about">O nas</a></li>
 </ul>
 
