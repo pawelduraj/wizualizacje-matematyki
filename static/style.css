@@ -15,20 +15,15 @@ nav, .card-panel {
     border: 2px solid #3f51b5 !important;
 }
 
-#content, #mathjax-content {
+#content {
     background-color: #ffffff;
     min-height: calc(100vh - 56px);
     padding: 20px 50px 20px 50px;
 }
 
-#mathjax-content {
-    opacity: 0;
-    transition-duration: 0.1s;
-}
-
 @media only screen and (min-width: 601px) {
 
-    #content, #mathjax-content {
+    #content {
         min-height: calc(100vh - 64px);
     }
 }
