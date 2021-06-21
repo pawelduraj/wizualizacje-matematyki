@@ -3,11 +3,32 @@
 {% block content %}
 <div id="content" class="container z-depth-2">
     <h3>O nas</h3>
-    <p class="flow-text">wip czekam na zdjecia kochani</p>
-    <img class="image" src="{{ url_for('static', filename='pics/krzysiu2.jpg') }}" alt="Krzysiu">
-    <img class="image" src="{{ url_for('static', filename='pics/pawel.png') }}" alt="Paweł">
-    <img class="image" src="{{ url_for('static', filename='pics/kuba.png') }}" alt="Kuba">
-    <img class="image" src="{{ url_for('static', filename='pics/grunwald.png') }}" alt="Grunwald">
-    <img class="image" src="{{ url_for('static', filename='pics/wiktoria2.jpg') }}" alt="Wiktoria">
+    <div class="flex">
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/krzysiu.jpg') }}" width="360" alt="Krzysiu">
+            <h5>Imię Nazwisko</h5>
+            <p>Opis o sobie... lorem ipsum dolor sit amet...</p>
+        </div>
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/pawel.png') }}" width="360" alt="Paweł">
+            <h5>Imię Nazwisko</h5>
+            <p>Opis o sobie... lorem ipsum dolor sit amet...</p>
+        </div>
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/kuba.png') }}" width="360" alt="Kuba">
+            <h5>Imię Nazwisko</h5>
+            <p>Opis o sobie... lorem ipsum dolor sit amet...</p>
+        </div>
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/grunwald.png') }}" width="360" alt="Grunwald">
+            <h5>Imię Nazwisko</h5>
+            <p>Opis o sobie... lorem ipsum dolor sit amet...</p>
+        </div>
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/wiktoria.jpg') }}" width="360" alt="Wiktoria">
+            <h5>Imię Nazwisko</h5>
+            <p>Opis o sobie... lorem ipsum dolor sit amet...</p>
+        </div>
+    </div>
 </div>
 {% endblock %}

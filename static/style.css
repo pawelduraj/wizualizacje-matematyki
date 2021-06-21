@@ -54,7 +54,18 @@ div.scroll {
 
 .image {
     max-width: 100%;
+}
+
+div.flex {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+div.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .sidenav li > a {
