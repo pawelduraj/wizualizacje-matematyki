@@ -23,7 +23,7 @@ class DataBase:
         # self.url = urlparse.urlparse(os.environ['DATABASE_URL'])
         
     def __db_connect__(self):
-        if os.environ['USER'] == 'pawel' or os.environ['USER'] == 'postgres':
+        if os.environ['USER'] == 'pawel' or os.environ['USER'] == 'postgres': # for local db purpose
             self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', database='localdb', user='postgres', host='localhost', password='admin')
         else:
             self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require')
