@@ -1,10 +1,21 @@
-from flask import Flask, render_template
+from os import name
+from flask import Flask, render_template, session, request, redirect, url_for
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
 import numpy as np
+import db_manager
+from functools import wraps
+import os
 
 app = Flask(__name__)
+
+# config
+# app.config.from_object(os.environ['APP_SETTINGS'])
+
+db = db_manager.DataBase()
+app.secret_key = 'key'
+
 
 @app.route('/')
 def quiz():
@@ -31,6 +42,73 @@ def topic2():
 @app.route('/sequences')
 def topic3():
     return render_template('sequences.html')
+
+def some_wrap(f):
+    @wraps(f)
+    def wrap():
+            list_users = db.select_users_points()
+            print(list_users)
+            return '0'
+    return wrap
+
+@app.route('/users')
+# @some_wrap
+def users():
+    list_users = db.select_users_points()
+    print(list_users)
+    return render_template('users.html', list_users=list_users)
+
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        name = request.form['name']
+        password = request.form['password']
+        email = request.form['email']
+        base_response = db.is_user_in_base(name)
+        if base_response == "name not string":
+            print("Błędna nazwa użytkownika")
+            return render_template("register.html")
+        elif not base_response is None:
+            print("Użytkownik już istnieje")
+            return render_template("register.html")
+        base_email_response = db.is_email_in_base(email)
+        if not base_email_response is None:
+            print("Podany email już został zarejestrowany")
+            return render_template("register.html")
+        insert_response = db.insert_new_user(name=name, password=password, email=email)
+        if insert_response == "email not string" or insert_response == "email not valid":
+            print("Błędny adres email")
+        if insert_response == "password not string":
+            print("Błędne hasło")
+        if insert_response == "User created":
+            print("Użytkownik poprawnie zarejestrowany")
+            return redirect(url_for("login"))
+        if insert_response == False:
+            print("Nie udało się utworzyć użytkownika")
+    return render_template("register.html")
+        
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        name = request.form['name']
+        password = request.form['password']
+        base_response = db.login_user(name, password)
+        if base_response:
+            print("Poprawne dane użytkownika")
+            session['user'] = name
+            session['points'] = db.get_points(name)
+            return redirect(url_for('quiz'))
+        else:
+            print("Błędne hasło lub login")
+    return render_template("login.html")
+
+@app.route('/logout')
+def logout():
+    session.pop('user', None)
+    session.pop('points', None)
+    print("Użytkownik został wylogowany")
+    return redirect(url_for('login'))
+    
 
 def quadratic_plots(a, b, c):
     fig = Figure()
