@@ -20,13 +20,19 @@ class DataBase:
 
     def __init__(self):
         self.DATABASE_URL = os.environ['DATABASE_URL']
-        # self.url = urlparse.urlparse(os.environ['DATABASE_URL'])
+        self.url = urlparse.urlparse(os.environ['DATABASE_URL'])
+        self.dbname = self.url.path[1:]
+        self.user = self.url.username
+        self.password = self.url.password
+        self.host = self.url.hostname
+        self.port = self.url.port
         
     def __db_connect__(self):
         if os.environ['USER'] == 'pawel' or os.environ['USER'] == 'postgres': # for local db purpose
             self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', database='localdb', user='postgres', host='localhost', password='admin')
         else:
-            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require')
+            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', dbname=self.dbname, user=self.user, password=self.password,
+             host=self.host, port=self.port)
         self.cur = self.conn.cursor() 
 
     # def __db_close__(self):
