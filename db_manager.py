@@ -31,8 +31,7 @@ class DataBase:
         if os.environ['USER'] == 'pawel' or os.environ['USER'] == 'postgres': # for local db purpose
             self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', database='localdb', user='postgres', host='localhost', password='admin')
         else:
-            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', dbname=self.dbname, user=self.user, password=self.password,
-             host=self.host, port=self.port)
+            self.conn = psycopg2.connect(sslmode='require', dbname=self.dbname, user=self.user, password=self.password, host=self.host)
         self.cur = self.conn.cursor() 
 
     # def __db_close__(self):
