@@ -20,18 +20,19 @@ class DataBase:
 
     def __init__(self):
         self.DATABASE_URL = os.environ['DATABASE_URL']
-        self.url = urlparse.urlparse(os.environ['DATABASE_URL'])
-        self.dbname = self.url.path[1:]
-        self.user = self.url.username
-        self.password = self.url.password
-        self.host = self.url.hostname
-        self.port = self.url.port
+        # self.url = urlparse.urlparse(os.environ['DATABASE_URL'])
+        # self.dbname = self.url.path[1:]
+        # self.user = self.url.username
+        # self.password = self.url.password
+        # self.host = self.url.hostname
+        # self.port = self.url.port
         
     def __db_connect__(self):
-        if os.environ['USER'] == 'pawel' or os.environ['USER'] == 'postgres': # for local db purpose
-            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', database='localdb', user='postgres', host='localhost', password='admin')
+        if self.DATABASE_URL.find('amazonaws') != -1:
+            # print(self.DATABASE_URL)
+            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require')
         else:
-            self.conn = psycopg2.connect(sslmode='require', dbname=self.dbname, user=self.user, password=self.password, host=self.host)
+            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', database='localdb', user='postgres', host='localhost', password='admin')
         self.cur = self.conn.cursor() 
 
     # def __db_close__(self):
