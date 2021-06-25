@@ -15,7 +15,8 @@ app = Flask(__name__)
 
 try:
     db = db_manager.DataBase()
-except:
+except Exception as e:
+    print(e)
     print("Brak DATABASE_URL")
     db = None
 
@@ -88,7 +89,7 @@ def register():
         if insert_response == "User created":
             print("Użytkownik poprawnie zarejestrowany")
             return redirect(url_for("login"))
-        if insert_response == False:
+        if not insert_response:
             print("Nie udało się utworzyć użytkownika")
     return render_template("register.html")
         
@@ -137,8 +138,8 @@ def quadratic_plots(a, b, c):
     return f'data:image/png;base64,{data}'
 
 @app.errorhandler(404)
-def not_found(e):
-    print(e)
+def not_found(error):
+    print(error)
     return render_template('404.html'), 404
 
 if __name__ == '__main__':
