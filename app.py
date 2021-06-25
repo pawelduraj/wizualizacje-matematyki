@@ -13,7 +13,12 @@ app = Flask(__name__)
 # config
 # app.config.from_object(os.environ['APP_SETTINGS'])
 
-db = db_manager.DataBase()
+try:
+    db = db_manager.DataBase()
+except:
+    print("Brak DATABASE_URL")
+    db = None
+
 app.secret_key = 'key'
 
 
