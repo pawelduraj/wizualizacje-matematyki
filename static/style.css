@@ -74,4 +74,11 @@ div.flex-column {
 
 .desc {
     font-size: 150%;
-    }
+    font-family: 'Abril Fatface';
+}
+
+.h3 {
+    text-align: center;
+    font-family: 'Hind Guntur', sans-serif;
+    font-size: 120%;
+}
