@@ -74,10 +74,10 @@ div.flex-column {
 
 .desc {
     font-size: 150%;
-    font-family: 'Hind Guntur', sans-serif;;
+    font-family: 'Hind Guntur', sans-serif;
 }
 
-.h3 {
+.h3, h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 120%;
 }
