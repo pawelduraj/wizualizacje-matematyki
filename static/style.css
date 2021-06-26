@@ -79,5 +79,6 @@ div.flex-column {
 
 .h3, h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 120%;
+    font-size: 200%;
+    text-align: center;
 }
