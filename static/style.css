@@ -71,3 +71,7 @@ div.flex-column {
 .sidenav li > a {
     padding: 0 16px;
 }
+
+.desc {
+    font-size: 150%;
+    }
