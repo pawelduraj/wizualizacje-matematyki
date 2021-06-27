@@ -15,9 +15,12 @@ app = Flask(__name__)
 
 try:
     db = db_manager.DataBase()
+    question_list = db.get_questions()
+    # for question in question_list:
+    #     print(question)
 except Exception as e:
     print(e)
-    print("Brak DATABASE_URL")
+    # print("Brak DATABASE_URL")
     db = None
 
 app.secret_key = 'key'
