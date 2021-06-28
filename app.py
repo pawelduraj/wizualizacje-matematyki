@@ -5,13 +5,10 @@ from io import BytesIO
 from matplotlib.figure import Figure
 import numpy as np
 import db_manager
-from functools import wraps
 import os
 
 app = Flask(__name__)
 
-# config
-# app.config.from_object(os.environ['APP_SETTINGS'])
 
 try:
     db = db_manager.DataBase()
@@ -52,16 +49,8 @@ def topic2():
 def topic3():
     return render_template('sequences.html')
 
-def some_wrap(f):
-    @wraps(f)
-    def wrap():
-            list_users = db.select_users_points()
-            print(list_users)
-            return '0'
-    return wrap
 
 @app.route('/users')
-# @some_wrap
 def users():
     list_users = db.select_users_points()
     print(list_users)
