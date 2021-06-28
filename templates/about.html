@@ -1,12 +1,13 @@
-{%  extends 'layout.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
 <div id="content" class="container z-depth-2">
-    <h3 class="h3">O nas</h3>
-    <p> <div class="desc"> Jesteśmy studentami II semestru Matematyki i Statystyki i w ramach projektu z Technologii Informacyjnych  przygotowaliśmy stronę, którą można wykorzystać do powtórki 
-        przed sprawdzianem czy maturą z matematyki. Znajdziemy na niej przydatne informacje z trzech działów: równań i nierówności kwadratowych, logarytmów i ciągów. Dodatkowo możecie
-        także sprawdzić swoją wiedzę w przygotowanym przez nas quizie. 
-        (ps nie musicie jakichs opisow o sobie robic bo bez sensu, nie stresujcie sie tym juz:) ) </div> </p>
+    <h3>O nas</h3>
+    <p class="flow-text"> Jesteśmy studentami II&nbsp;semestru Matematyki i&nbsp;Statystyki i&nbsp;w ramach projektu
+        z&nbsp;Technologii Informacyjnych przygotowaliśmy stronę, którą można wykorzystać do powtórki przed
+        sprawdzianem czy maturą z&nbsp;matematyki. Znajdziemy na niej przydatne informacje z&nbsp;trzech działów:
+        równań i&nbsp;nierówności kwadratowych, logarytmów i&nbsp;ciągów. Dodatkowo możecie także sprawdzić swoją
+        wiedzę w&nbsp;przygotowanym przez nas quizie. </p>
     <div class="flex">
         <div class="flex-column">
             <img class="image" src="{{ url_for('static', filename='pics/krzysiu.jpg') }}" width="360" alt="Krzysiu">
@@ -18,7 +19,7 @@
         </div>
         <div class="flex-column">
             <img class="image" src="{{ url_for('static', filename='pics/kuba.png') }}" width="360" alt="Kuba">
-            <h5>Imię Nazwisko</h5>   
+            <h5>Imię Nazwisko</h5>
         </div>
         <div class="flex-column">
             <img class="image" src="{{ url_for('static', filename='pics/grunwald.png') }}" width="360" alt="Grunwald">

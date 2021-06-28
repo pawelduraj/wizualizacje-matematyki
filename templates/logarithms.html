@@ -1,82 +1,92 @@
-{%  extends 'layout.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
 <div id="content" class="container z-depth-2">
     <h3 class="center">Logarytmy</h3>
-    <p>Definicja logarytmu - logarytm przy podstawie \(a\) z liczby \(b\) to taka liczba \(c,\) że \(a^c = b.\)
+    <p class="flow-text">Definicja logarytmu - logarytm przy podstawie \(a\) z&nbsp;liczby \(b\) to taka liczba
+        \(c,\) że \(a^c = b.\)
         Zapis matematyczny: \(\log_{a} b = c \Leftrightarrow a^c = b.\)
     </p>
-    <p>Założenia:</p>
+    <p class="flow-text">Założenia:</p>
     <ol>
-        <li>\(a \gt 0\)</li>
-        <li>\(a \ne 1\)</li>
-        <li>\(b \gt 0\)</li>
+        <li class="flow-text">\(a \gt 0\)</li>
+        <li class="flow-text">\(a \ne 1\)</li>
+        <li class="flow-text">\(b \gt 0\)</li>
     </ol>
-    <p><b>Przykład 1.</b> \(\log_{2} 16 = 4\), ponieważ \(2^4 = 16\)</p>
-    <p class="center"><strong>Działania i operacje na logarytmach</strong></p><br>
-    <p>Jeżeli \(a \gt 0,\) \(a \ne 1,\) \(b \gt 0,\) \(c \gt 0,\) to zachodzą następujące wzory:</p>
+    <p class="flow-text"><b>Przykład 1.</b> \(\log_{2} 16 = 4\), ponieważ \(2^4 = 16\)</p>
+    <p class="flow-text center"><strong>Działania i&nbsp;operacje na logarytmach</strong></p><br>
+    <p class="flow-text">Jeżeli \(a \gt 0,\) \(a \ne 1,\) \(b \gt 0,\) \(c \gt 0,\) to zachodzą następujące
+        wzory:</p>
     <ol>
-        <li>\(\log_{a} b + \log_{a} c = \log_{a} (b \cdot c);\)</li>
-        <li>\(\log_{a} b - \log_{a} c = \log_{a} (\frac{b}{c});\)</li>
-        <li>\(\log_{a} b^n = n \cdot \log_{a} b;\)</li>
-        <li>\(a^{\log_{a} b} = b;\)</li>
-        <li>\(\log_{a} b = \frac{\log_{c} b}{\log_{c} a}.\)</li>
+        <li class="flow-text">\(\log_{a} b + \log_{a} c = \log_{a} (b \cdot c);\)</li>
+        <li class="flow-text">\(\log_{a} b - \log_{a} c = \log_{a} (\frac{b}{c});\)</li>
+        <li class="flow-text">\(\log_{a} b^n = n \cdot \log_{a} b;\)</li>
+        <li class="flow-text">\(a^{\log_{a} b} = b;\)</li>
+        <li class="flow-text">\(\log_{a} b = \frac{\log_{c} b}{\log_{c} a}.\)</li>
     </ol>
-    <p><b>Dowód</b></p>
+    <p class="flow-text"><b>Dowód</b></p>
     <ol>
-        <li>
+        <li class="flow-text">
             Niech \(\log_{a} b = x, \log_{a} c = y.\) Wtedy z definicji logarytmu \(a^x = b, a^y = c.\)
-            <div class="scroll">$$b \cdot c = a^x \cdot a^y = a^{x + y} \Rightarrow \log_{a} (b \cdot c) = \log_{a} (a^{x + y})
+            <div class="scroll flow-text">$$b \cdot c = a^x \cdot a^y = a^{x + y} \Rightarrow \log_{a} (b \cdot c) =
+                \log_{a} (a^{x + y})
                 = x + y = \log_{a} b + \log_{a} c.$$
             </div>
             Czyli ostatecznie \(\log_{a} b + \log_{a} c = \log_{a} (b \cdot c).\)
         </li>
-        <li>
-            Niech \(\log_{a} b = x, \log_{a} c = y.\) Wtedy z definicji logarytmu \(a^x = b, a^y = c.\)
-            <div class="scroll">$$\frac{b}{c} = \frac{a^x}{a^y} = a^{x - y} \Rightarrow \log_{a} (\frac{b}{c}) = \log_{a} (a^{x - y})
+        <li class="flow-text">
+            Niech \(\log_{a} b = x, \log_{a} c = y.\) Wtedy z&nbsp;definicji logarytmu \(a^x = b, a^y = c.\)
+            <div class="scroll flow-text">$$\frac{b}{c} = \frac{a^x}{a^y} = a^{x - y} \Rightarrow \log_{a}
+                (\frac{b}{c}) = \log_{a} (a^{x - y})
                 = x - y = \log_{a} b - \log_{a} c.$$
             </div>
             Czyli ostatecznie \(\log_{a} b - \log_{a} c = \log_{a} (\frac{b}{c}).\)
         </li>
-        <li>
-            Niech \(\log_{a} b = x.\) Wtedy z definicji logarytmu \(a^x = b.\)
-            <div class="scroll">$$a^x = b \Rightarrow a^{nx} = b^n \Rightarrow log_{a} (a^{nx}) = log_{a} (b^n)
-                \Rightarrow nx = log_{a} (b^n) \Rightarrow n \log_{a} b = log_{a} (b^n).$$</div>
+        <li class="flow-text">
+            Niech \(\log_{a} b = x.\) Wtedy z&nbsp;definicji logarytmu \(a^x = b.\)
+            <div class="scroll flow-text">$$a^x = b \Rightarrow a^{nx} = b^n \Rightarrow log_{a} (a^{nx}) = log_{a}
+                (b^n)
+                \Rightarrow nx = log_{a} (b^n) \Rightarrow n \log_{a} b = log_{a} (b^n).$$
+            </div>
             Czyli ostatecznie \(log_{a} (b^n) = n \log_{a} b.\)
         </li>
-        <li>
-            Niech \(\log_{a} b = x.\) Wtedy z definicji logarytmu \(a^x = b.\)
-            <div class="scroll">$$a^{log_a b} = a^x = b.$$</div>
+        <li class="flow-text">
+            Niech \(\log_{a} b = x.\) Wtedy z&nbsp;definicji logarytmu \(a^x = b.\)
+            <div class="scroll flow-text">$$a^{log_a b} = a^x = b.$$</div>
             Czyli ostatecznie \(a^{\log_{a} b} = b.\)
         </li>
-        <li>Niech \(\log_{a} b = x.\) Wtedy z definicji logarytmu \(a^x = b.\)
-            <div class="scroll">$$\log_{c} b = \log_{c} (a^x) = x \log_{c} a.$$</div>
-            <div class="scroll">$$\frac{\log_{c} b}{\log_{c} a} = \frac{x \log_{c} a}{\log_{c} a} = x = \log_{a} b.$$</div>
+        <li class="flow-text">Niech \(\log_{a} b = x.\) Wtedy z&nbsp;definicji logarytmu \(a^x = b.\)
+            <div class="scroll flow-text">$$\log_{c} b = \log_{c} (a^x) = x \log_{c} a.$$</div>
+            <div class="scroll flow-text">$$\frac{\log_{c} b}{\log_{c} a} = \frac{x \log_{c} a}{\log_{c} a} = x =
+                \log_{a} b.$$
+            </div>
             Czyli ostatecznie \(\log_{a} b = \frac{\log_{c} b}{\log_{c} a}.\)
         </li>
     </ol>
-    <p><b>Przykład 2.</b> Oblicz \(\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3}.\)<br></p>
-    <div class="scroll">$$\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3} = \frac{\log_{5} 4 + \frac{\log_{5}
+    <p class="flow-text"><b>Przykład 2.</b> Oblicz \(\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3}.\)<br></p>
+    <div class="scroll flow-text">$$\frac{\log_{5} 4 + \log_{25} 4}{\log_{5} 3} = \frac{\log_{5} 4 + \frac{\log_{5}
         4}{\log_{5} 25}}{\log_{5} 3} =
         \frac{\log_{5} 4 + \frac{\log_{5} 4}{2}}{\log_{5} 3} = \frac{\frac{3}{2} \log_{5} 4}{\log_{5} 3} =
         \frac{\log_{5} 4^{\frac{3}{2}}}{\log_{5} 3} = \frac{\log_{5} 8}{\log_{5} 3} = \log_{3} 8$$
     </div>
-    <p><b>Przykład 3.</b> Oblicz \(\frac{1}{2} \log_{3} 15 - \log_3 \sqrt{5}.\)<br></p>
-    <div class="scroll">$$\frac{1}{2} \log_{3} 15 - \log_3 \sqrt{5} = \log_{3} \sqrt{15} - \log_3 \sqrt{5} =
+    <p class="flow-text"><b>Przykład 3.</b> Oblicz \(\frac{1}{2} \log_{3} 15 - \log_3 \sqrt{5}.\)<br></p>
+    <div class="scroll flow-text">$$\frac{1}{2} \log_{3} 15 - \log_3 \sqrt{5} = \log_{3} \sqrt{15} - \log_3 \sqrt{5}
+        =
         \log_{3}
         \sqrt{\frac{15}{5}} =
         \log_{3} \sqrt{3} = \frac{1}{2}$$
     </div>
-    <p><b>Przykład 4.</b>Rozwiąż równanie \(log_{\sqrt{2}} (\log_{7} \frac{2^x + 104}{2^{x+1}}) = 0.\)<br>
-        Z definicji logarytmu</p>
-    <div class="scroll">$$\log_{7} \frac{2^x + 104}{2^{x+1}} = \sqrt{2}^0 = 1$$
+    <p class="flow-text"><b>Przykład 4.</b>Rozwiąż równanie \(log_{\sqrt{2}} (\log_{7} \frac{2^x + 104}{2^{x+1}}) =
+        0.\)<br>
+        Z&nbsp;definicji logarytmu</p>
+    <div class="scroll flow-text">$$\log_{7} \frac{2^x + 104}{2^{x+1}} = \sqrt{2}^0 = 1$$
         $$\frac{2^x + 104}{2^{x+1}} = 7^1 = 7$$
         $$2^x + 104 = 7(2 \cdot 2^x)$$
         $$104 = 13 \cdot 2^x$$
         $$2^x = 8$$
         $$x = 2.$$
     </div>
-    <p>Odpowiedź: \(x = 2.\)</p>
+    <p class="flow-text">Odpowiedź: \(x = 2.\)</p>
 </div>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

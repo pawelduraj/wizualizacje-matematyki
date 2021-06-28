@@ -54,6 +54,7 @@ div.scroll {
 
 .image {
     max-width: 100%;
+    margin: auto;
 }
 
 div.flex {
@@ -73,13 +74,10 @@ div.flex-column {
     padding: 0 16px;
 }
 
-.desc {
-    font-size: 150%;
-    font-family: 'Hind Guntur', sans-serif;
+h3, nav {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.h3, h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 200%;
-    text-align: center;
+p, li {
+    font-family: 'Hind Guntur', sans-serif;
 }
