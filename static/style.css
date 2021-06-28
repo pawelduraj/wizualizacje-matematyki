@@ -66,6 +66,7 @@ div.flex-column {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    margin-right: 1em;
 }
 
 .sidenav li > a {
