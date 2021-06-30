@@ -1,25 +1,27 @@
 import os
-import psycopg2
 import re
+
+import psycopg2
+
 import questions
 
-class DataBase:
 
+class DataBase:
     DATABASE_URL = None
     conn = None
     cur = None
     valid_email_regex = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
-
     def __init__(self):
         self.DATABASE_URL = os.environ['DATABASE_URL']
-        
+
     def __db_connect__(self):
         if self.DATABASE_URL.find('amazonaws') != -1:
             self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require')
         else:
-            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', database='localdb', user='postgres', host='localhost', password='admin')
-        self.cur = self.conn.cursor() 
+            self.conn = psycopg2.connect(self.DATABASE_URL, sslmode='require', database='localdb', user='postgres',
+                                         host='localhost', password='admin')
+        self.cur = self.conn.cursor()
 
     def select_users_points(self):
         resp = []
@@ -69,8 +71,6 @@ class DataBase:
             if self.conn is not None:
                 self.conn.close()
         return resp
-        
-
 
     def insert_new_user(self, name, password, email):
         if not isinstance(name, str):
@@ -99,7 +99,7 @@ class DataBase:
                 self.conn.close()
 
         return new_user_created
-    
+
     def get_points(self, name):
         points = -1
         try:
@@ -122,7 +122,6 @@ class DataBase:
             query = f"""UPDATE users SET points = {points} WHERE user_name = '{name}';"""
             self.cur.execute(query)
             self.conn.commit()
-            # print("Commit udany")
             self.cur.close()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
@@ -177,10 +176,10 @@ class DataBase:
                 self.conn.close()
         return questions_list
 
-    def insert_questions(self, file:str):
+    def insert_questions(self, file: str):
+        reader = open(file, 'r')  # text file
         try:
             self.__db_connect__()
-            reader = open(file) # text file
             line = reader.readline()
             while line != '':
                 query = f"""INSERT INTO questions (question) VALUES ('{line}') RETURNING question_id"""
@@ -217,14 +216,4 @@ class DataBase:
             print(error)
         finally:
             if self.conn is not None:
-                self.conn.close()        
-
-
-        
-
-        
-
-    
-
-
-
+                self.conn.close()

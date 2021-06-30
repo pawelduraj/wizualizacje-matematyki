@@ -10,9 +10,9 @@ function check(zadanie) {
     for (const element of document.getElementsByClassName(zadanie + ' correct')) {
         element.style.color = 'green';
         if (element.previousElementSibling.checked) {
-            xhr.send("zad="+zadanie.substring(3, zadanie.length)+"&correct=true");
+            xhr.send("zad=" + zadanie.substring(3, zadanie.length) + "&correct=true");
         } else {
-            xhr.send("zad="+zadanie.substring(3, zadanie.length)+"&correct=false");
+            xhr.send("zad=" + zadanie.substring(3, zadanie.length) + "&correct=false");
         }
     }
     for (const element of document.getElementsByClassName(zadanie + ' incorrect')) {
@@ -20,7 +20,7 @@ function check(zadanie) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'),
         {
             alignment: 'center',
