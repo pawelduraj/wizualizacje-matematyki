@@ -117,12 +117,12 @@ class DataBase:
         return points
 
     def set_points(self, name, points):
-        points = -1
         try:
             self.__db_connect__()
             query = f"""UPDATE users SET points = {points} WHERE user_name = '{name}';"""
             self.cur.execute(query)
             self.conn.commit()
+            # print("Commit udany")
             self.cur.close()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)

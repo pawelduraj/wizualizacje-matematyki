@@ -25,6 +25,7 @@ app.secret_key = 'key'
 
 @app.route('/')
 def quiz():
+    session['points'] = 0
     return render_template('quiz.html')
 
 @app.route('/about')
@@ -94,7 +95,7 @@ def login():
         if base_response:
             flash("Poprawne dane użytkownika")
             session['user'] = name
-            session['points'] = db.get_points(name)
+            session['max_points'] = db.get_points(name)
             return redirect(url_for('quiz'))
         else:
             flash("Błędne hasło lub login")
@@ -103,9 +104,9 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('user', None)
-    session.pop('points', None)
+    session.pop('max_points', None)
     flash("Użytkownik został wylogowany")
-    return redirect(url_for('login'))
+    return redirect(url_for('quiz'))
 
 @app.route('/quiz', methods=['POST'])
 def validate_quiz():
@@ -113,6 +114,12 @@ def validate_quiz():
     zad = int(request.form['zad'])
     correct = True if request.form['correct']=='true' else False
     print('question no', zad, '- is correct?', correct)
+    if correct:
+        session['points'] += 1
+        if 'user' in session:
+            if session['points'] > session['max_points']:
+                session['max_points'] = session['points']
+                db.set_points(session['user'], session['points'])
     return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
 
