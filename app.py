@@ -59,6 +59,7 @@ def users():
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
+    session.pop('_flashes', None)
     if request.method == "POST":
         name = request.form['name']
         password = request.form['password']
@@ -88,6 +89,7 @@ def register():
         
 @app.route('/login', methods=["GET", "POST"])
 def login():
+    session.pop('_flashes', None)
     if request.method == "POST":
         name = request.form['name']
         password = request.form['password']
