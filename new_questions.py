@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import db_manager
 
 db = db_manager.DataBase()
