@@ -54,6 +54,8 @@
                 <li><a href="/about">O nas</a></li>
                 {% if not logged_in %}
                     <li><a href="/login">Zaloguj się</a></li>
+                {% else %}
+                    <li><a href="/logout">Wyloguj się</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -78,6 +80,8 @@
     <li><a href="/about">O nas</a></li>
     {% if not logged_in %}
         <li><a href="/login">Zaloguj się</a></li>
+    {% else %}
+        <li><a href="/logout">Wyloguj się</a></li>
     {% endif %}
 </ul>
 
