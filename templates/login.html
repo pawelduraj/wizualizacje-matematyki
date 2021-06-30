@@ -20,6 +20,9 @@
             <button class="btn waves-effect waves-light indigo" type="submit" name="action">
                 Wyślij<i class="material-icons right">send</i>
             </button>
+            {% for message in get_flashed_messages() %}
+                <p>{{ message }}</p>
+            {% endfor %}
         </form>
     </div>
 </div>

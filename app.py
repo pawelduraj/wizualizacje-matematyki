@@ -1,5 +1,5 @@
 from os import name
-from flask import Flask, render_template, session, request, redirect, url_for
+from flask import Flask, render_template, session, request, redirect, url_for, flash
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
@@ -64,25 +64,25 @@ def register():
         email = request.form['email']
         base_response = db.is_user_in_base(name)
         if base_response == "name not string":
-            print("Błędna nazwa użytkownika")
+            flash("Błędna nazwa użytkownika")
             return render_template("register.html")
         elif not base_response is None:
-            print("Użytkownik już istnieje")
+            flash("Użytkownik już istnieje")
             return render_template("register.html")
         base_email_response = db.is_email_in_base(email)
         if not base_email_response is None:
-            print("Podany email już został zarejestrowany")
+            flash("Podany email już został zarejestrowany")
             return render_template("register.html")
         insert_response = db.insert_new_user(name=name, password=password, email=email)
         if insert_response == "email not string" or insert_response == "email not valid":
-            print("Błędny adres email")
+            flash("Błędny adres email")
         if insert_response == "password not string":
-            print("Błędne hasło")
+            flash("Błędne hasło")
         if insert_response == "User created":
-            print("Użytkownik poprawnie zarejestrowany")
+            flash("Użytkownik poprawnie zarejestrowany")
             return redirect(url_for("login"))
         if not insert_response:
-            print("Nie udało się utworzyć użytkownika")
+            flash("Nie udało się utworzyć użytkownika")
     return render_template("register.html")
         
 @app.route('/login', methods=["GET", "POST"])
@@ -92,19 +92,19 @@ def login():
         password = request.form['password']
         base_response = db.login_user(name, password)
         if base_response:
-            print("Poprawne dane użytkownika")
+            flash("Poprawne dane użytkownika")
             session['user'] = name
             session['points'] = db.get_points(name)
             return redirect(url_for('quiz'))
         else:
-            print("Błędne hasło lub login")
+            flash("Błędne hasło lub login")
     return render_template("login.html")
 
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     session.pop('points', None)
-    print("Użytkownik został wylogowany")
+    flash("Użytkownik został wylogowany")
     return redirect(url_for('login'))
     
 
