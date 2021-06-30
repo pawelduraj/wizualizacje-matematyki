@@ -1,6 +1,8 @@
 {
     "name": "MatWiz",
     "short_name": "MatWiz",
+    "description": "Strona do powtórki przed sprawdzianem czy maturą z matematyki.",
+    "start_url": "/",
     "icons": [
         {
             "src": "/static/android-chrome-192x192.png",
