@@ -26,36 +26,36 @@ app.secret_key = 'key'
 @app.route('/')
 def quiz():
     session['points'] = 0
-    return render_template('quiz.html')
+    return render_template('quiz.html', logged_in=('user' in session))
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', logged_in=('user' in session))
 
 @app.route('/problems')
 def problems():
-    return render_template('problems.html')
+    return render_template('problems.html', logged_in=('user' in session))
 
 @app.route('/quadratics')
 def topic1():
     plot1 = quadratic_plots(3, 2, -5)
     plot2 = quadratic_plots(3, 4, 2)
-    return render_template('quadratics.html', plot1=plot1, plot2 = plot2)
+    return render_template('quadratics.html', plot1=plot1, plot2 = plot2, logged_in=('user' in session))
 
 @app.route('/logarithms')
 def topic2():
-    return render_template('logarithms.html')
+    return render_template('logarithms.html', logged_in=('user' in session))
 
 @app.route('/sequences')
 def topic3():
-    return render_template('sequences.html')
+    return render_template('sequences.html', logged_in=('user' in session))
 
 
 @app.route('/users')
 def users():
     list_users = db.select_users_points()
     print(list_users)
-    return render_template('users.html', list_users=list_users)
+    return render_template('users.html', list_users=list_users, logged_in=('user' in session))
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -66,14 +66,14 @@ def register():
         base_response = db.is_user_in_base(name)
         if base_response == "name not string":
             flash("Błędna nazwa użytkownika")
-            return render_template("register.html")
+            return render_template("register.html", logged_in=('user' in session))
         elif not base_response is None:
             flash("Użytkownik już istnieje")
-            return render_template("register.html")
+            return render_template("register.html", logged_in=('user' in session))
         base_email_response = db.is_email_in_base(email)
         if not base_email_response is None:
             flash("Podany email już został zarejestrowany")
-            return render_template("register.html")
+            return render_template("register.html", logged_in=('user' in session))
         insert_response = db.insert_new_user(name=name, password=password, email=email)
         if insert_response == "email not string" or insert_response == "email not valid":
             flash("Błędny adres email")
@@ -84,7 +84,7 @@ def register():
             return redirect(url_for("login"))
         if not insert_response:
             flash("Nie udało się utworzyć użytkownika")
-    return render_template("register.html")
+    return render_template("register.html", logged_in=('user' in session))
         
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -99,7 +99,7 @@ def login():
             return redirect(url_for('quiz'))
         else:
             flash("Błędne hasło lub login")
-    return render_template("login.html")
+    return render_template("login.html", logged_in=('user' in session))
 
 @app.route('/logout')
 def logout():
@@ -146,7 +146,7 @@ def quadratic_plots(a, b, c):
 @app.errorhandler(404)
 def not_found(error):
     print(error)
-    return render_template('404.html'), 404
+    return render_template('404.html', logged_in=('user' in session)), 404
 
 if __name__ == '__main__':
     app.run()
