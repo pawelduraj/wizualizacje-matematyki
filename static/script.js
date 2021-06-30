@@ -1,13 +1,15 @@
 function check(zadanie) {
-    // TODO funkcja sprawdzająca poprawność zadania
+    for (const element of document.getElementsByClassName(zadanie)) {
+        element.previousElementSibling.className = 'check';
+        element.previousElementSibling.disabled = true;
+    }
     for (const element of document.getElementsByClassName(zadanie + ' correct')) {
         element.style.color = 'green';
-        element.previousElementSibling.className = 'check';
     }
     for (const element of document.getElementsByClassName(zadanie + ' incorrect')) {
         element.style.color = 'red';
-        element.previousElementSibling.className = 'check';
     }
+
 }
 document.addEventListener('DOMContentLoaded', function() {
     M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'),
