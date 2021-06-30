@@ -1,5 +1,5 @@
 from os import name
-from flask import Flask, render_template, session, request, redirect, url_for, flash
+from flask import Flask, render_template, session, request, redirect, url_for
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
@@ -106,7 +106,15 @@ def logout():
     session.pop('points', None)
     flash("Użytkownik został wylogowany")
     return redirect(url_for('login'))
-    
+
+@app.route('/quiz', methods=['POST'])
+def validate_quiz():
+    print('request received.')
+    zad = int(request.form['zad'])
+    correct = True if request.form['correct']=='true' else False
+    print('question no', zad, '- is correct?', correct)
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+
 
 def quadratic_plots(a, b, c):
     fig = Figure()
