@@ -110,10 +110,9 @@ def logout():
 
 @app.route('/quiz', methods=['POST'])
 def validate_quiz():
-    print('request received.')
     zad = int(request.form['zad'])
     correct = True if request.form['correct']=='true' else False
-    print('question no', zad, '- is correct?', correct)
+    print(session['user'] if 'user' in session else '', zad, 'correct' if correct else 'incorrect')
     if correct:
         session['points'] += 1
         if 'user' in session:
