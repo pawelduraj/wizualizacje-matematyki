@@ -1,3 +1,5 @@
+/* BASIC STYLES */
+
 body {
     background-color: #e8eaf6;
 }
@@ -9,6 +11,39 @@ nav, .card-panel {
 .container {
     width: 100%;
 }
+
+#content {
+    background-color: #ffffff;
+    min-height: calc(100vh - 56px);
+    padding: 20px 50px 20px 50px;
+}
+
+.image {
+    max-width: 100%;
+}
+
+.sidenav li > a {
+    padding: 0 16px;
+}
+
+h3, nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, li {
+    font-family: 'Hind Guntur', sans-serif;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media only screen and (min-width: 601px) {
+
+    #content {
+        min-height: calc(100vh - 64px);
+    }
+}
+
+/* QUIZ */
 
 [type="radio"]:checked + span {
     color: rgba(0, 0, 0, 0.87);
@@ -29,18 +64,7 @@ nav, .card-panel {
     border: 2px solid red !important;
 }
 
-#content {
-    background-color: #ffffff;
-    min-height: calc(100vh - 56px);
-    padding: 20px 50px 20px 50px;
-}
-
-@media only screen and (min-width: 601px) {
-
-    #content {
-        min-height: calc(100vh - 64px);
-    }
-}
+/* PROBLEM PAGES */
 
 .topics a {
     background-color: white;
@@ -66,9 +90,7 @@ div.scroll {
     white-space: nowrap;
 }
 
-.image {
-    max-width: 100%;
-}
+/* ABOUT PAGE */
 
 .flex-column > .image {
     margin: auto;
@@ -85,16 +107,4 @@ div.flex-column {
     flex-direction: column;
     flex-wrap: wrap;
     margin-right: 1em;
-}
-
-.sidenav li > a {
-    padding: 0 16px;
-}
-
-h3, nav {
-    font-family: 'Montserrat', sans-serif;
-}
-
-p, li {
-    font-family: 'Hind Guntur', sans-serif;
 }
