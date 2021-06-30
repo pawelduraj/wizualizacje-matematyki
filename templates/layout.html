@@ -52,6 +52,10 @@
                 <li><a href="/">Quiz</a></li>
                 <li><a class="dropdown-trigger" href="/problems" data-target="dropdown">Zagadnienia<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a href="/about">O nas</a></li>
+                {% if True %}
+                    {# TODO if user is not logged in #}
+                    <li><a href="/login">Zaloguj się</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
@@ -73,6 +77,10 @@
         </ul>
       </li>
     <li><a href="/about">O nas</a></li>
+    {% if True %}
+        {# TODO if user is not logged in #}
+        <li><a href="/login">Zaloguj się</a></li>
+    {% endif %}
 </ul>
 
 {% block content %}{% endblock %}
