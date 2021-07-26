@@ -1,0 +1,12 @@
+Pytanie 1
++Odpowiedź 1
+Odpowiedź 2
+Odpowiedź 3
+Pytanie 2
+Odpowiedź 1
+Odpowiedź 2
++Odpowiedź 3
+Pytanie 3
++Odpowiedź 1
+Odpowiedź 2
+Odpowiedź 3

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="content" class="container z-depth-2">
+    <h3>Zarejestruj się</h3>
+    <div class="row">
+        <form class="col s12" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="username" type="text" class="validate" name="name">
+                    <label for="username">Nazwa użytkownika</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" name="email">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" name="password">
+                    <label for="password">Hasło</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light indigo" type="submit" name="action">
+                Wyślij<i class="material-icons right">send</i>
+            </button>
+            {% for message in get_flashed_messages() %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </form>
+    </div>
+</div>
+{% endblock %}

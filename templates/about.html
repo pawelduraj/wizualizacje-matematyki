@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="content" class="container z-depth-2">
+    <h3>O nas</h3>
+    <p class="flow-text"> Jesteśmy studentami II&nbsp;semestru Matematyki i&nbsp;Statystyki i&nbsp;w ramach projektu
+        z&nbsp;Technologii Informacyjnych przygotowaliśmy stronę, którą można wykorzystać do powtórki przed
+        sprawdzianem czy maturą z&nbsp;matematyki. Znajdziemy na niej przydatne informacje z&nbsp;trzech działów:
+        równań i&nbsp;nierówności kwadratowych, logarytmów i&nbsp;ciągów. Dodatkowo możecie także sprawdzić swoją
+        wiedzę w&nbsp;przygotowanym przez nas quizie. </p>
+    <div class="flex">
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/krzysiu.jpg') }}" width="360" alt="Krzysiu">
+            <h5>Krzysztof Mizgała</h5>
+        </div>
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/pawel.jpg') }}" width="360" alt="Paweł">
+            <h5>Paweł Niedźwiecki</h5>
+        </div>
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/grunwald.png') }}" width="360" alt="Grunwald">
+            <h5>Jerzy Grunwald</h5>  
+        </div>
+        <div class="flex-column">
+            <img class="image" src="{{ url_for('static', filename='pics/wiktoria.jpg') }}" width="360" alt="Wiktoria">
+            <h5>Wiktoria Kudła</h5>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,455 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="content" class="container z-depth-2">
+    <form action="#">
+        <p class="flow-text">Równanie \(9x^2 - 6\sqrt{2}x + 2 = 0\) ma w&nbsp;liczbach rzeczywistych</p>
+        <p>
+            <label>
+                <input name="zad1" type="radio"/>
+                <span class="zad1 incorrect">\(0\) rozwiązań</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad1" type="radio"/>
+                <span class="zad1 correct">\(1\) rozwiązanie</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad1" type="radio"/>
+                <span class="zad1 incorrect">\(2\) rozwiązania</span>
+            </label>
+        </p>
+        <a id="zad1" class="waves-effect waves-light btn indigo" onclick="check('zad1')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Które z&nbsp;liczb są rozwiązaniami równania \(2x^2 - 4x - 4 = \frac{1}{8}\)?</p>
+        <p>
+            <label>
+                <input name="zad2" type="radio"/>
+                <span class="zad2 incorrect">\(x_1 = \frac{1}{8}, x_2 = 3\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad2" type="radio"/>
+                <span class="zad2 incorrect">\(x_1 = -\frac{1}{6}, x_2 = \frac{5}{6}\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad2" type="radio"/>
+                <span class="zad2 correct">\(x_1 = -\frac{1}{4}, x_2 = \frac{11}{4}\)</span>
+            </label>
+        </p>
+        <a id="zad2" class="waves-effect waves-light btn indigo" onclick="check('zad2')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Ile wynosi suma liczb spełniających równanie \(2x^2 - 12x + 14 = 0\)?</p>
+        <p>
+            <label>
+                <input name="zad3" type="radio"/>
+                <span class="zad3 correct">\(6\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad3" type="radio"/>
+                <span class="zad3 incorrect">\(-6\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad3" type="radio"/>
+                <span class="zad3 incorrect">\(2 \sqrt{2}\)</span>
+            </label>
+        </p>
+        <a id="zad3" class="waves-effect waves-light btn indigo" onclick="check('zad3')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Mniejsza z&nbsp;liczb spełniających równanie \(-17x^2 + 51x - 34 = 0\) to?</p>
+        <p>
+            <label>
+                <input name="zad4" type="radio"/>
+                <span class="zad4 correct">\(1\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad4" type="radio"/>
+                <span class="zad4 incorrect">\(-1\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad4" type="radio"/>
+                <span class="zad4 incorrect">\(2\)</span>
+            </label>
+        </p>
+        <a id="zad4" class="waves-effect waves-light btn indigo" onclick="check('zad4')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Zbiorem rozwiązań nierówności \(x^2 - 14x + 24 \gt 0\) jest zbiór</p>
+        <p>
+            <label>
+                <input name="zad5" type="radio"/>
+                <span class="zad5 incorrect">\((-\infty, 0) \cup (6, \infty)\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad5" type="radio"/>
+                <span class="zad5 correct">\((-\infty, 2) \cup (12, \infty)\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad5" type="radio"/>
+                <span class="zad5 incorrect">\((6, 24)\)</span>
+            </label>
+        </p>
+        <a id="zad5" class="waves-effect waves-light btn indigo" onclick="check('zad5')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Zbiorem rozwiązań nierówności \(2x^2 + 3x + 2 \le 0\) jest zbiór</p>
+        <p>
+            <label>
+                <input name="zad6" type="radio"/>
+                <span class="zad6 incorrect">\(\mathbb{R}\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad6" type="radio"/>
+                <span class="zad6 incorrect">\((-\infty, -2] \cup [\frac{1}{2}, \infty)\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad6" type="radio"/>
+                <span class="zad6 correct">\(\emptyset\)</span>
+            </label>
+        </p>
+        <a id="zad6" class="waves-effect waves-light btn indigo" onclick="check('zad6')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Która liczba należy do zbioru rozwiązań nierówności \(x^2 - 4x \ge 0\)?</p>
+        <p>
+            <label>
+                <input name="zad7" type="radio"/>
+                <span class="zad7 incorrect">\(1\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad7" type="radio"/>
+                <span class="zad7 correct">\(0\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad7" type="radio"/>
+                <span class="zad7 incorrect">\(\pi\)</span>
+            </label>
+        </p>
+        <a id="zad7" class="waves-effect waves-light btn indigo" onclick="check('zad7')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Dla jakich wartości parametru \(m\) równanie \(x^2 - 2mx + m + 2 = 0\) ma dwa różne
+            rozwiązania?</p>
+        <p>
+            <label>
+                <input name="zad8" type="radio"/>
+                <span class="zad8 correct">\( m \in (-\infty, -1) \cup (2, \infty)\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad8" type="radio"/>
+                <span class="zad8 incorrect">\(m \in (-\infty, -2) \cup (1, \infty)\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad8" type="radio"/>
+                <span class="zad8 incorrect">\(m \in(1, 2)\)</span>
+            </label>
+        </p>
+        <a id="zad8" class="waves-effect waves-light btn indigo" onclick="check('zad8')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Dla jakich wartości parametru \(m\) nierówność \(5mx^2 - 8mx + 3m - 1 \gt 0\) nie ma
+            rozwiązań?</p>
+        <p>
+            <label>
+                <input name="zad9" type="radio"/>
+                <span class="zad9 incorrect">\(m \in \emptyset\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad9" type="radio"/>
+                <span class="zad9 incorrect">\(m \in (0, 2)\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad9" type="radio"/>
+                <span class="zad9 correct">\(m \in (-5, 0)\)</span>
+            </label>
+        </p>
+        <a id="zad9" class="waves-effect waves-light btn indigo" onclick="check('zad9')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Liczba \(\log_{2} 3 + \log_{2} \frac{24}{9}\) jest równa</p>
+        <p>
+            <label>
+                <input name="zad10" type="radio"/>
+                <span class="zad10 incorrect">\(\log_{2} \frac{17}{3}\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad10" type="radio"/>
+                <span class="zad10 correct">\(3\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad10" type="radio"/>
+                <span class="zad10 incorrect">\(8\)</span>
+            </label>
+        </p>
+        <a id="zad10" class="waves-effect waves-light btn indigo" onclick="check('zad10')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Liczba \(\log_{5} 15 - 2\) jest równa</p>
+        <p>
+            <label>
+                <input name="zad11" type="radio"/>
+                <span class="zad11 correct">\(\log_{5} \frac{3}{5}\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad11" type="radio"/>
+                <span class="zad11 incorrect">\(\log_{5} \frac{5}{3}\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad11" type="radio"/>
+                <span class="zad11 incorrect">\(\log_{5} 3\)</span>
+            </label>
+        </p>
+        <a id="zad11" class="waves-effect waves-light btn indigo" onclick="check('zad11')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Wiadomo, że \(\log_{x} 16 = \frac{1}{2},\) zatem \(x\) wynosi</p>
+        <p>
+            <label>
+                <input name="zad12" type="radio"/>
+                <span class="zad12 incorrect">\(4\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad12" type="radio"/>
+                <span class="zad12 incorrect">\(8\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad12" type="radio"/>
+                <span class="zad12 correct">\(256\)</span>
+            </label>
+        </p>
+        <a id="zad12" class="waves-effect waves-light btn indigo" onclick="check('zad12')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Wiadomo, że \(\log_{2} x = - 4,\) więc \(x\) równa się</p>
+        <p>
+            <label>
+                <input name="zad13" type="radio"/>
+                <span class="zad13 correct">\(\frac{1}{16}\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad13" type="radio"/>
+                <span class="zad13 incorrect">\(-\frac{1}{16}\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad13" type="radio"/>
+                <span class="zad13 incorrect">\(16\)</span>
+            </label>
+        </p>
+        <a id="zad13" class="waves-effect waves-light btn indigo" onclick="check('zad13')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Liczba \(\frac{\log_{3} 16}{\log_{3} 5} + 4 \log_{5} 10\) jest równa</p>
+        <p>
+            <label>
+                <input name="zad14" type="radio"/>
+                <span class="zad14 incorrect">\(4 \log_{5} 2\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad14" type="radio"/>
+                <span class="zad14 correct">\(4 + 8 \log_{5} 2\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad14" type="radio"/>
+                <span class="zad14 incorrect">\(8 + \log_{5} 2\)</span>
+            </label>
+        </p>
+        <a id="zad14" class="waves-effect waves-light btn indigo" onclick="check('zad14')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Wyznacz sumę pierwszych \(5\) wyrazów ciągu \(a_n = 2n + 4, n \ge 1\)</p>
+        <p>
+            <label>
+                <input name="zad15" type="radio"/>
+                <span class="zad15 incorrect">\(S_5 = 30\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad15" type="radio"/>
+                <span class="zad15 incorrect">\(S_5 = 40\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad15" type="radio"/>
+                <span class="zad15 correct">\(S_5 = 50\)</span>
+            </label>
+        </p>
+        <a id="zad15" class="waves-effect waves-light btn indigo" onclick="check('zad15')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Suma pierwszych \(4\) wyrazów ciągu \(a_n = 2 \cdot 3^n, n \ge 1\) jest równa</p>
+        <p>
+            <label>
+                <input name="zad16" type="radio"/>
+                <span class="zad16 correct">\(240\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad16" type="radio"/>
+                <span class="zad16 incorrect">\(420\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad16" type="radio"/>
+                <span class="zad16 incorrect">\(512\)</span>
+            </label>
+        </p>
+        <a id="zad16" class="waves-effect waves-light btn indigo" onclick="check('zad16')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Który wyraz ciągu \((a_n)\) określonego wzorem \(a_n = n^2 - 3n, n \ge 1\) wynosi
+            \(10\)?</p>
+        <p>
+            <label>
+                <input name="zad17" type="radio"/>
+                <span class="zad17 incorrect">drugi</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad17" type="radio"/>
+                <span class="zad17 correct">piąty</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad17" type="radio"/>
+                <span class="zad17 incorrect">siódmy</span>
+            </label>
+        </p>
+        <a id="zad17" class="waves-effect waves-light btn indigo" onclick="check('zad17')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Ile wynosi suma wszystkich dodatnich wyrazów ciągu \(a_n = -n^2 + 4n + 1, n \ge
+            1\)?</p>
+        <p>
+            <label>
+                <input name="zad18" type="radio"/>
+                <span class="zad18 correct">\(14\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad18" type="radio"/>
+                <span class="zad18 incorrect">\(10\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad18" type="radio"/>
+                <span class="zad18 incorrect">\(13\)</span>
+            </label>
+        </p>
+        <a id="zad18" class="waves-effect waves-light btn indigo" onclick="check('zad18')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Liczba ujemnych wyrazów ciągu \(a_n = n^2 + n - 12, n \ge 1\) jest równa</p>
+        <p>
+            <label>
+                <input name="zad19" type="radio"/>
+                <span class="zad19 incorrect">\(0\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad19" type="radio"/>
+                <span class="zad19 incorrect">\(1\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad19" type="radio"/>
+                <span class="zad19 correct">\(2\)</span>
+            </label>
+        </p>
+        <a id="zad19" class="waves-effect waves-light btn indigo" onclick="check('zad19')">Sprawdź!</a>
+    </form>
+    <form action="#">
+        <p class="flow-text">Iloczyn miejsc zerowych ciągu \(a_n = (n^2 - 4)(n - 3), n \ge 1\) wynosi
+        </p>
+        <p>
+            <label>
+                <input name="zad20" type="radio"/>
+                <span class="zad20 incorrect">\(-12\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad20" type="radio"/>
+                <span class="zad20 incorrect">\(3\)</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input name="zad20" type="radio"/>
+                <span class="zad20 correct">\(6\)</span>
+            </label>
+        </p>
+        <a id="zad20" class="waves-effect waves-light btn indigo" onclick="check('zad20')">Sprawdź!</a>
+    </form>
+    <br>
+    <a id="zad" class="flow-text" href="/users">Pokaż ranking użytkowników</a>
+</div>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endblock %}

@@ -1,5 +1,4 @@
-Wiktoria Kudła 262254 - podstrony:
-    1) główna (?)
-    2) informacje o projekcie i autorzy
-    3) wyniki quizu* 
-Jerzy Grunwald 262237 - podstrona zagadnienia
+Wiktoria Kudła 262254 - informacje o projekcie i autorzy
+Jerzy Grunwald 262237 - podstrona zagadnienia, quiz
+Krzysztof Mizgała - full stack
+Paweł Niedźwiecki 236017 - PostgreSQL
